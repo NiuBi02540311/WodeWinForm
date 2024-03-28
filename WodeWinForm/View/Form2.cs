@@ -15,6 +15,8 @@ namespace WodeWinForm.View
         public Form2()
         {
             InitializeComponent();
+            //var BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            //this.BackColor = BackColor;
         }
     }
 }

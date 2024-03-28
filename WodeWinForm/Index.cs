@@ -86,20 +86,7 @@ namespace WodeWinForm
             mzhj.Show();
             fullTabControl1.SelectedTab = fullTabControl1.TabPages[fullTabControl1.TabPages.Count - 1];
         }
-        private void ToolStripMenuItem1_Click2()
-        {
-            Form1 mzhj = new Form1(); //mzhj为窗体Form
-            mzhj.MdiParent = this;
-            TabPage tb = new TabPage();
-            tb.Controls.Add(mzhj); //将窗体添加到form中
-            tb.Text = mzhj.Text + " "; //设定tabpage标签
-            tb.Name = mzhj.Name; //设定tabpage的name属性，为了之后的新增和销毁处理
-            this.fullTabControl1.TabPages.Add(tb);
-            mzhj.FormBorderStyle = FormBorderStyle.None; //去除原form自带的边框
-            mzhj.Dock = DockStyle.Fill; //填充整个tabpage
-            mzhj.Show();
-            fullTabControl1.SelectedTab = fullTabControl1.TabPages[fullTabControl1.TabPages.Count - 1];
-        }
+        
         private void ParentForm_Resize(object sender, EventArgs e)
         {
             panel1.Height = panel1.Parent.Height;
@@ -459,63 +446,28 @@ namespace WodeWinForm
 
             frmTree_Load(NewTable);
             treeView1.ExpandAll();
-            //DataTable ErrorData = new DataTable("ErrorData");
-
-            //ErrorData.Columns.Add("ID", System.Type.GetType("System.String"));
-            //ErrorData.Columns.Add("ParentID", System.Type.GetType("System.String"));
-            //ErrorData.Columns.Add("Name", System.Type.GetType("System.String"));
-            //ErrorData.Columns.Add("assemblyName", System.Type.GetType("System.String"));
-            //ErrorData.Columns.Add("typeName", System.Type.GetType("System.String"));
-
-            //ErrorData.Rows.Add("1", "0", "学生管理");
-            //ErrorData.Rows.Add("2", "0", "教师管理");
-            //ErrorData.Rows.Add("3", "1", "学生信息录入", "WindowsFormsApplication2", "WindowsFormsApplication2.View.Form2");
-            //ErrorData.Rows.Add("4", "2", "教师信息录入", "WindowsFormsApplication2", "WindowsFormsApplication2.View.Form3");
+            
 
         }
 
-        private void fullTabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            return;
-            //标签背景填充颜色
-
-            SolidBrush BackBrush = new SolidBrush(Color.Yellow);
-            //标签文字填充颜色
-            SolidBrush FrontBrush = new SolidBrush(Color.Black);
-            StringFormat StringF = new StringFormat();
-            //设置文字对齐方式
-            StringF.Alignment = StringAlignment.Center;
-            StringF.LineAlignment = StringAlignment.Center;
-           
-            var tp = fullTabControl1.SelectedTab;
-            var g = tp.CreateGraphics();
-            //for (int i = 0; i < this.TabPages.Count; i++)
-            {
-                //获取标签头工作区域
-                Rectangle Rec = fullTabControl1.GetTabRect(0);
-                //绘制标签头背景颜色
-                //e.Graphics.FillRectangle(BackBrush, Rec);
-                //绘制标签头文字
-                g.DrawString(tp.Text, new Font("宋体", 12), FrontBrush, Rec, StringF);
-            }
-        }
+       
         int tableLayoutPanel1Width = 0;
          
-        private void showMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        private void showHideMenuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (tableLayoutPanel1.Visible)
             {
                 tableLayoutPanel1Width = tableLayoutPanel1.Width;
                 tableLayoutPanel1.Visible = false;
                 panel1.Visible = false;
-                showMenuToolStripMenuItem.Text = "ShowMenu";
+                showHideMenuToolStripMenuItem.Text = "ShowMenu";
             }
             else
             {
                 tableLayoutPanel1.Visible = true;
                 panel1.Visible = true;
                 tableLayoutPanel1.Width = tableLayoutPanel1Width;
-                showMenuToolStripMenuItem.Text = "HideMenu";
+                showHideMenuToolStripMenuItem.Text = "HideMenu";
             }
             
         }
@@ -579,7 +531,10 @@ namespace WodeWinForm
            
         }
 
-        
-    }
+        private void fullTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 
 }

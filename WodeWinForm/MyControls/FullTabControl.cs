@@ -35,6 +35,7 @@ namespace WodeWinForm.MyControls
             //https://www.cnblogs.com/fangjb/p/15786779.html
             //InitializeComponent();
 
+           
             // 设置TabControl的标签高度
             this.ItemSize = new Size(0, 40); // 宽度设置为0，自动计算；高度设置为100像素
 
@@ -58,92 +59,22 @@ namespace WodeWinForm.MyControls
         SolidBrush blue = new SolidBrush(Color.Blue);             //蓝色
         SolidBrush black = new SolidBrush(Color.Black);            //黑色
         SolidBrush Azure = new SolidBrush(Color.Azure);
-        private void tabControl_main_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            //设置笔刷
-            //SolidBrush red = new SolidBrush(Color.Red);              // 红色
-            //SolidBrush yellow = new SolidBrush(Color.Yellow);        //黄色
-            //SolidBrush blue = new SolidBrush(Color.Blue);             //蓝色
-            //SolidBrush black = new SolidBrush(Color.Black);            //黑色
-            //设置背景
-
-            //绘制红色背景
-            // Rectangle rectangleRed = this.GetTabRect(0);
-            // e.Graphics.FillRectangle(red, rectangleRed);
-
-            //绘制黄色背景
-            //Rectangle rectangleYellow = this.GetTabRect(1);
-            //e.Graphics.FillRectangle(yellow, rectangleYellow);
-            //绘制黄色背景
-            //Rectangle rectangleBlue = this.GetTabRect(2);
-            //e.Graphics.FillRectangle(blue, rectangleBlue);
-            //设置标签文字居中对齐
-            StringFormat stringFormat = new StringFormat();
-            stringFormat.Alignment = StringAlignment.Center;
-            //设置标签文字
-            for (int i = 0; i < this.TabPages.Count; i++)
-            {
-                Rectangle rec = this.GetTabRect(i);
-                e.Graphics.FillRectangle(yellow, rec);
-                //设置文字字体和文字大小
-                //e.Graphics.DrawString(this.TabPages[i].Text, new Font("宋体", 10), black, rec, stringFormat);
-                e.Graphics.DrawString("hahaha", new Font("宋体", 10), black, rec, stringFormat);
-            }
-
-        }
-        private void tabControlLeft_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            //标签背景填充颜色
-            SolidBrush BackBrush = new SolidBrush(Color.Yellow);
-            //标签文字填充颜色
-            SolidBrush FrontBrush = new SolidBrush(Color.Black);
-            StringFormat StringF = new StringFormat();
-            //设置文字对齐方式
-            StringF.Alignment = StringAlignment.Center;
-            StringF.LineAlignment = StringAlignment.Center;
-
-            for (int i = 0; i < this.TabPages.Count; i++)
-            {
-                //获取标签头工作区域
-                Rectangle Rec = this.GetTabRect(i);
-                //绘制标签头背景颜色
-                //e.Graphics.FillRectangle(BackBrush, Rec);
-                //绘制标签头文字
-                e.Graphics.DrawString(this.TabPages[i].Text, new Font("宋体", 12), FrontBrush, Rec, StringF);
-            }
-        }
-
-        private void tabControlLeft_DrawItem3(object sender, DrawItemEventArgs e)
-        {
-            //标签背景填充颜色
-            //SolidBrush BackBrush = new SolidBrush(MainBackColor);
-            ////标签文字填充颜色
-            //SolidBrush FrontBrush = new SolidBrush(Color.Black);
-            //StringFormat StringF = new StringFormat();
-            ////设置文字对齐方式
-            //StringF.Alignment = StringAlignment.Center;
-            //StringF.LineAlignment = StringAlignment.Center;
-
-            //for (int i = 0; i < tabControlLeft.TabPages.Count; i++)
-            //{
-            //    //获取标签头工作区域
-            //    Rectangle Rec = tabControlLeft.GetTabRect(i);
-            //    //绘制标签头背景颜色
-            //    e.Graphics.FillRectangle(BackBrush, Rec);
-            //    //绘制标签头文字
-            //    e.Graphics.DrawString(tabControlLeft.TabPages[i].Text, new Font("宋体", 12), FrontBrush, Rec, StringF);
-            //}
-        }
+        
         //绘制“Ｘ”号即关闭按钮
         private void KDelTabControl_DrawItem(object sender, DrawItemEventArgs e)
         {
             try
             {
-                //选中的标签页填充成白色
-                //using (SolidBrush s = new SolidBrush(Color.White))
-                using (SolidBrush s = new SolidBrush(Color.LightYellow))
+                //选中的标签页填充成白色
+                //using (SolidBrush s = new SolidBrush(Color.White))
+
+                var BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+                var color = e.Index == this.SelectedIndex ? Color.LightYellow : BackColor;
+                using (SolidBrush s = new SolidBrush(Color.LightYellow))
+                //using (SolidBrush s = new SolidBrush(color))
                 {
                     Rectangle rect = this.GetTabRect(this.SelectedIndex);
+                    //Rectangle rect = this.GetTabRect(e.Index);
                     e.Graphics.FillRectangle(s, rect);
                 }
 
@@ -157,7 +88,7 @@ namespace WodeWinForm.MyControls
                 //先添加TabPage属性  
                 //e.Graphics.DrawString(this.TabPages[e.Index].Text, this.Font, SystemBrushes.ControlText, tab.X + 2, tab.Y + 2);
                 //e.Graphics.DrawString(this.TabPages[e.Index].Text, this.Font, blue, tab.X + 2, tab.Y + 2);
-                var yanse = e.Index == this.SelectedIndex ? red : black;
+                var yanse = e.Index == this.SelectedIndex ? blue : black;
                 e.Graphics.DrawString(this.TabPages[e.Index].Text, ziti, yanse, tab.X + 1.5F, tab.Y + 20, StringF);
 
                 //绘制标签背景
@@ -253,6 +184,82 @@ namespace WodeWinForm.MyControls
             }
         }
 
+        private void tabControl_main_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            //设置笔刷
+            //SolidBrush red = new SolidBrush(Color.Red);              // 红色
+            //SolidBrush yellow = new SolidBrush(Color.Yellow);        //黄色
+            //SolidBrush blue = new SolidBrush(Color.Blue);             //蓝色
+            //SolidBrush black = new SolidBrush(Color.Black);            //黑色
+            //设置背景
+
+            //绘制红色背景
+            // Rectangle rectangleRed = this.GetTabRect(0);
+            // e.Graphics.FillRectangle(red, rectangleRed);
+
+            //绘制黄色背景
+            //Rectangle rectangleYellow = this.GetTabRect(1);
+            //e.Graphics.FillRectangle(yellow, rectangleYellow);
+            //绘制黄色背景
+            //Rectangle rectangleBlue = this.GetTabRect(2);
+            //e.Graphics.FillRectangle(blue, rectangleBlue);
+            //设置标签文字居中对齐
+            StringFormat stringFormat = new StringFormat();
+            stringFormat.Alignment = StringAlignment.Center;
+            //设置标签文字
+            for (int i = 0; i < this.TabPages.Count; i++)
+            {
+                Rectangle rec = this.GetTabRect(i);
+                e.Graphics.FillRectangle(yellow, rec);
+                //设置文字字体和文字大小
+                //e.Graphics.DrawString(this.TabPages[i].Text, new Font("宋体", 10), black, rec, stringFormat);
+                e.Graphics.DrawString("hahaha", new Font("宋体", 10), black, rec, stringFormat);
+            }
+
+        }
+        private void tabControlLeft_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            //标签背景填充颜色
+            SolidBrush BackBrush = new SolidBrush(Color.Yellow);
+            //标签文字填充颜色
+            SolidBrush FrontBrush = new SolidBrush(Color.Black);
+            StringFormat StringF = new StringFormat();
+            //设置文字对齐方式
+            StringF.Alignment = StringAlignment.Center;
+            StringF.LineAlignment = StringAlignment.Center;
+
+            for (int i = 0; i < this.TabPages.Count; i++)
+            {
+                //获取标签头工作区域
+                Rectangle Rec = this.GetTabRect(i);
+                //绘制标签头背景颜色
+                //e.Graphics.FillRectangle(BackBrush, Rec);
+                //绘制标签头文字
+                e.Graphics.DrawString(this.TabPages[i].Text, new Font("宋体", 12), FrontBrush, Rec, StringF);
+            }
+        }
+
+        private void tabControlLeft_DrawItem3(object sender, DrawItemEventArgs e)
+        {
+            //标签背景填充颜色
+            //SolidBrush BackBrush = new SolidBrush(MainBackColor);
+            ////标签文字填充颜色
+            //SolidBrush FrontBrush = new SolidBrush(Color.Black);
+            //StringFormat StringF = new StringFormat();
+            ////设置文字对齐方式
+            //StringF.Alignment = StringAlignment.Center;
+            //StringF.LineAlignment = StringAlignment.Center;
+
+            //for (int i = 0; i < tabControlLeft.TabPages.Count; i++)
+            //{
+            //    //获取标签头工作区域
+            //    Rectangle Rec = tabControlLeft.GetTabRect(i);
+            //    //绘制标签头背景颜色
+            //    e.Graphics.FillRectangle(BackBrush, Rec);
+            //    //绘制标签头文字
+            //    e.Graphics.DrawString(tabControlLeft.TabPages[i].Text, new Font("宋体", 12), FrontBrush, Rec, StringF);
+            //}
+        }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 

@@ -33,8 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SunnyUI">
+      <HintPath>..\..\..\net_project\MyProject2019\wpf\sunnyUI_demo\wfm1\wfm1\bin\Debug\SunnyUI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,11 +52,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
+    <Compile Include="GlobalConfig.cs" />
     <Compile Include="Index.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Index.Designer.cs">
       <DependentUpon>Index.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\BaseTreeView.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="MyControls\FullTabControl.cs">
       <SubType>Component</SubType>
@@ -81,6 +90,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -101,6 +111,29 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Lib\Gartoon-Team-Gartoon-Action-Go-bottom.16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\Gartoon-Team-Gartoon-Action-Go-bottom.128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\Gartoon-Team-Gartoon-Action-Go-jump.128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\Gartoon-Team-Gartoon-Action-Go-last.128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\Gartoon-Team-Gartoon-Action-Tool-tweak.128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\Gartoon-Team-Gartoon-Action-Go-jump.16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\Gartoon-Team-Gartoon-Action-Go-last.16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\Gartoon-Team-Gartoon-Action-Tool-tweak.16.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

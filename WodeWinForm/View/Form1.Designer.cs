@@ -29,44 +29,57 @@ namespace WodeWinForm.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.treeView1 =  new MyControls.BaseTreeView();//new System.Windows.Forms.TreeView();
+            this.btn_LoadData = new System.Windows.Forms.Button();
+            this.txt_CheckValue = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // treeView1
             // 
-            this.button1.Location = new System.Drawing.Point(212, 92);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.treeView1.Location = new System.Drawing.Point(32, 12);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(515, 394);
+            this.treeView1.TabIndex = 0;
             // 
-            // button2
+            // btn_LoadData
             // 
-            this.button2.Location = new System.Drawing.Point(212, 121);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_LoadData.Location = new System.Drawing.Point(573, 22);
+            this.btn_LoadData.Name = "btn_LoadData";
+            this.btn_LoadData.Size = new System.Drawing.Size(75, 23);
+            this.btn_LoadData.TabIndex = 1;
+            this.btn_LoadData.Text = "button1";
+            this.btn_LoadData.UseVisualStyleBackColor = true;
+            this.btn_LoadData.Click += new System.EventHandler(this.btn_LoadData_Click);
+            // 
+            // txt_CheckValue
+            // 
+            this.txt_CheckValue.Location = new System.Drawing.Point(32, 431);
+            this.txt_CheckValue.Multiline = true;
+            this.txt_CheckValue.Name = "txt_CheckValue";
+            this.txt_CheckValue.Size = new System.Drawing.Size(706, 105);
+            this.txt_CheckValue.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(800, 574);
+            this.Controls.Add(this.txt_CheckValue);
+            this.Controls.Add(this.btn_LoadData);
+            this.Controls.Add(this.treeView1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        //private System.Windows.Forms.TreeView treeView1;
+        private MyControls.BaseTreeView treeView1;
+        
+        private System.Windows.Forms.Button btn_LoadData;
+        private System.Windows.Forms.TextBox txt_CheckValue;
     }
 }
