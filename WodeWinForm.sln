@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33801.447
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WodeWinForm", "WodeWinForm\WodeWinForm.csproj", "{5FFF2754-C8C4-48F1-B6B5-B02F9D9A903A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FFF2754-C8C4-48F1-B6B5-B02F9D9A903A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FFF2754-C8C4-48F1-B6B5-B02F9D9A903A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FFF2754-C8C4-48F1-B6B5-B02F9D9A903A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FFF2754-C8C4-48F1-B6B5-B02F9D9A903A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0390378E-DD28-4F70-83C6-CB9BAAFD7E60}
+	EndGlobalSection
+EndGlobal
