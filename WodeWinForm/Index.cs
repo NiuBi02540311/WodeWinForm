@@ -18,7 +18,10 @@ namespace WodeWinForm
     public partial class Index : Form
     {
         private readonly DataTable MenuDataTable = null;
-        public Index()
+
+        private ImageList imageList;
+        private ContextMenuStrip contextMenuStrip;
+        public Index()
         {
             InitializeComponent();
             //https://www.jb51.net/article/80196.htm
@@ -53,9 +56,12 @@ namespace WodeWinForm
         private void Form_Alert_Load(object sender, EventArgs e)
         {
             SaveConfig(true);
-        }
+            LoadPng();
+            LoadContextMenuStrip();
+            
+    }
 
-    private DataTable GetMenuData()
+        private DataTable GetMenuData()
         {
             //(string assemblyName, string typeName);
             DataTable ErrorData = new DataTable("ErrorData");
@@ -68,11 +74,84 @@ namespace WodeWinForm
 
             ErrorData.Rows.Add("1", "0", "学生管理");
             ErrorData.Rows.Add("2", "0", "教师管理");
-            ErrorData.Rows.Add("3", "1", "学生信息录入", "WodeWinForm", "WodeWinForm.View.Form1");
-            ErrorData.Rows.Add("4", "2", "教师信息录入", "WodeWinForm", "WodeWinForm.View.Form2");
+            ErrorData.Rows.Add("3", "1", "学生信息录入", "WodeWinForm", "WodeWinForm.View.Form1");
+            ErrorData.Rows.Add("4", "2", "教师信息录入", "WodeWinForm", "WodeWinForm.View.Form2");
+            for (int i= 5; i < 16; i++)
+            {
+                ErrorData.Rows.Add(i, i % 2 == 0 ? 1:2, "教师信息录入"+i, "WodeWinForm", "WodeWinForm.View.Form2");
+            }
+           
             return ErrorData;
         }
-        private void ToolStripMenuItem1_Click()
+        private void LoadContextMenuStrip()
+        {
+            contextMenuStrip = new ContextMenuStrip();
+            var toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            var toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+
+            contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            toolStripMenuItem1,toolStripMenuItem2});
+            contextMenuStrip.Name = "contextMenuStrip1";
+            contextMenuStrip.Size = new System.Drawing.Size(125, 26);
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            toolStripMenuItem1.Text = "关闭当前界面";
+
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new System.Drawing.Size(124, 22);
+            toolStripMenuItem2.Text = "关闭所有界面";
+
+            fullTabControl1.ContextMenuStrip = contextMenuStrip;
+            toolStripMenuItem1.Click += (object sender, EventArgs e) =>
+            {
+                MessageBox.Show($"关闭当前界面【{fullTabControl1.SelectedTab.Text}】");
+                fullTabControl1.TabPages.Remove(fullTabControl1.SelectedTab);
+            };
+            toolStripMenuItem2.Click += (object sender, EventArgs e) =>
+            {
+                MessageBox.Show("关闭所有界面");
+                fullTabControl1.TabPages.Clear();
+            };
+        }
+        private void LoadPng()
+        {
+            string imagedirPath = @"E:\2024\WodeWinForm\WodeWinForm\Lib\1";
+            if (Directory.Exists(imagedirPath))
+            {
+                string[] stringsPath = Directory.GetFiles(imagedirPath, "*.png");
+                if (stringsPath.Length > 0)
+                {
+                    imageList = new ImageList();
+                    string[] fileType = { ".jpg", ".png",".ico" };
+
+                    var list = stringsPath.ToList().OrderBy(x => x);
+                    foreach (string s in list)
+                    {
+                        if (fileType.Contains(Path.GetExtension(s)))
+                        {
+                            Image image = Image.FromFile(s);
+                            string keyName = Path.GetFileNameWithoutExtension(s);
+                            imageList.Images.Add(keyName, image);
+                        }
+                    }
+                    imageList.ImageSize = new Size(16, 16);
+                    imageList.TransparentColor = Color.Transparent;
+                    //使用imageList
+                    //label1.ImageList = imageList1;
+                    //label1.ImageKey = "1";
+                    //button1.ImageList = imageList1;
+                    //button1.ImageIndex = 2;
+
+                    treeView1.ImageList = imageList;
+                }
+               
+            }
+            
+        }
+        private void ToolStripMenuItem1_Click()
         {
             Form1 mzhj = new Form1(); //mzhj为窗体Form
             mzhj.MdiParent = this;
@@ -167,7 +246,7 @@ namespace WodeWinForm
             //2.Activator.CreateInstance(Type, Object[])
 
             //Form2 mzhj = new Form2(); //mzhj为窗体Form   
-            var find = MenuDataTable.Select("ID = " + strID);
+            var find = MenuDataTable.Select($"ID = '{strID}'" );
             if (find == null || find.Length == 0) return;
 
             //CreateInstance(string assemblyName, string typeName);
@@ -184,6 +263,7 @@ namespace WodeWinForm
             mzhj.MdiParent = this;
             TabPage tb = new TabPage();
             tb.Padding = new Padding { All = 2 };
+            //tb.BackColor = GlobalConfig.BackColor;
             tb.Controls.Add(mzhj); //将窗体添加到form中
             //tb.Text = mzhj.Text ; //设定tabpage标签
             tb.Text = find[0]["Name"].ToString();
@@ -340,7 +420,7 @@ namespace WodeWinForm
                     Node.Tag = Row[strID].ToString();
                     Node.ImageIndex = 1;
                     this.treeView1.Nodes.Add(Node);
-                    AddTree(Int32.Parse(Row[strID].ToString()), Node); //再次递归
+                    AddTree(Int32.Parse(Row[strID].ToString()), Node, NewTable); //再次递归
                 }
                 else
                 {
@@ -349,7 +429,7 @@ namespace WodeWinForm
                     Node.Tag = Row[strID].ToString();
                     Node.ImageIndex = 1;
                     pNode.Nodes.Add(Node);
-                    AddTree(Int32.Parse(Row[strID].ToString()), Node); //再次递归
+                    AddTree(Int32.Parse(Row[strID].ToString()), Node, NewTable); //再次递归
                 }
             }
         }
@@ -436,7 +516,7 @@ namespace WodeWinForm
             var NewTable = find.CopyToDataTable();
             foreach(DataRow w in NewTable.Rows)
             {
-                str +=  w["ID"].ToString() + ",";
+                str +=  w["ID"].ToString() + "," + w["ParentID"].ToString() + ",";
             }
             str += "0";
 

@@ -135,5 +135,38 @@
   <ItemGroup>
     <None Include="Lib\Gartoon-Team-Gartoon-Action-Tool-tweak.16.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\1\Graphicloads-Colorful-Long-Shadow-Search.24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\1\Hopstarter-Sleek-Xp-Basic-Folder.16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\1\Hopstarter-Sleek-Xp-Basic-Folder-Open.16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\1\Graphicloads-Colorful-Long-Shadow-Search.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\1\Ampeross-Qetto-2-Search.24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\1\Ampeross-Qetto-2-Search.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\1\Ampeross-Qetto-2-Search.256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\1\Graphicloads-Colorful-Long-Shadow-Zoom.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\1\Graphicloads-Colorful-Long-Shadow-Zoom.24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\1\Graphicloads-Colorful-Long-Shadow-Zoom.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\1\Graphicloads-Colorful-Long-Shadow-Zoom.16.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

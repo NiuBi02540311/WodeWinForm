@@ -63,6 +63,36 @@ namespace WodeWinForm.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Ampeross_Qetto_2_Search_24 {
+            get {
+                object obj = ResourceManager.GetObject("Ampeross_Qetto_2_Search_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Ampeross_Qetto_2_Search_256 {
+            get {
+                object obj = ResourceManager.GetObject("Ampeross_Qetto_2_Search_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Ampeross_Qetto_2_Search_32 {
+            get {
+                object obj = ResourceManager.GetObject("Ampeross_Qetto_2_Search_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap Gartoon_Team_Gartoon_Action_Go_bottom_128 {
             get {
                 object obj = ResourceManager.GetObject("Gartoon_Team_Gartoon_Action_Go_bottom_128", resourceCulture);
@@ -136,6 +166,76 @@ namespace WodeWinForm.Properties {
         internal static System.Drawing.Bitmap Gartoon_Team_Gartoon_Action_Tool_tweak_16 {
             get {
                 object obj = ResourceManager.GetObject("Gartoon_Team_Gartoon_Action_Tool_tweak_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Graphicloads_Colorful_Long_Shadow_Search_24 {
+            get {
+                object obj = ResourceManager.GetObject("Graphicloads_Colorful_Long_Shadow_Search_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Graphicloads_Colorful_Long_Shadow_Search_32 {
+            get {
+                object obj = ResourceManager.GetObject("Graphicloads_Colorful_Long_Shadow_Search_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Graphicloads_Colorful_Long_Shadow_Zoom_16 {
+            get {
+                object obj = ResourceManager.GetObject("Graphicloads_Colorful_Long_Shadow_Zoom_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Graphicloads_Colorful_Long_Shadow_Zoom_24 {
+            get {
+                object obj = ResourceManager.GetObject("Graphicloads_Colorful_Long_Shadow_Zoom_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Graphicloads_Colorful_Long_Shadow_Zoom_32 {
+            get {
+                object obj = ResourceManager.GetObject("Graphicloads_Colorful_Long_Shadow_Zoom_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Hopstarter_Sleek_Xp_Basic_Folder_16 {
+            get {
+                object obj = ResourceManager.GetObject("Hopstarter_Sleek_Xp_Basic_Folder_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Hopstarter_Sleek_Xp_Basic_Folder_Open_16 {
+            get {
+                object obj = ResourceManager.GetObject("Hopstarter_Sleek_Xp_Basic_Folder_Open_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

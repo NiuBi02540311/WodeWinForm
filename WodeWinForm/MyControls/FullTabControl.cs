@@ -38,7 +38,7 @@ namespace WodeWinForm.MyControls
            
             // 设置TabControl的标签高度
             this.ItemSize = new Size(0, 40); // 宽度设置为0，自动计算；高度设置为100像素
-
+            this.ItemSize = new Size(0, 30);
             // 设置TabControl的标签与边缘的间距
             //tabControl.Padding = new Padding(10); // 默认情况下，高度不受Padding影响，但可以调整左右间距
 
@@ -70,19 +70,33 @@ namespace WodeWinForm.MyControls
 
                 var BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
                 var color = e.Index == this.SelectedIndex ? Color.LightYellow : BackColor;
-                using (SolidBrush s = new SolidBrush(Color.LightYellow))
-                //using (SolidBrush s = new SolidBrush(color))
+                //using (SolidBrush s = new SolidBrush(Color.LightYellow))
+                using (SolidBrush s = new SolidBrush(color))
                 {
-                    Rectangle rect = this.GetTabRect(this.SelectedIndex);
-                    //Rectangle rect = this.GetTabRect(e.Index);
+                    //Rectangle rect = this.GetTabRect(this.SelectedIndex);
+                    Rectangle rect = this.GetTabRect(e.Index);
                     e.Graphics.FillRectangle(s, rect);
                 }
-
+                if (e.State == DrawItemState.Selected)
+                {
+                    //SolidBrush backbrush = new SolidBrush(Color.FromArgb(255, 51, 102, 255));
+                    //SolidBrush fontbrush = new SolidBrush(Color.White);
+                    //Font tabFont = new Font("微软雅黑", 13, FontStyle.Bold, GraphicsUnit.Pixel);
+                    //borderpen = new Pen(Color.FromArgb(255, 51, 102, 255));
+                }
+                else
+                {
+                    //SolidBrush backbrush = new SolidBrush(Color.FromArgb(255, 43, 87, 154));
+                    //SolidBrush fontbrush = new SolidBrush(Color.White);
+                    //Font tabFont = new Font("微软雅黑", 13, FontStyle.Bold, GraphicsUnit.Pixel);
+                    //borderpen = new Pen(Color.FromArgb(255, 43, 87, 154));
+                }
                 StringFormat StringF = new StringFormat();
                 StringF.Alignment = StringAlignment.Near;
                 //StringF.LineAlignment = StringAlignment.Near;
                 var ziti = new Font("黑体", 10);
-                ziti = new Font("微软雅黑", 10);
+                //ziti = new Font("微软雅黑", 10);
+                ziti = e.State == DrawItemState.Selected ? new Font("微软雅黑", 13, FontStyle.Bold, GraphicsUnit.Pixel) : new Font("微软雅黑", 13, GraphicsUnit.Pixel);
                 Rectangle tab = this.GetTabRect(e.Index);
 
                 //先添加TabPage属性  

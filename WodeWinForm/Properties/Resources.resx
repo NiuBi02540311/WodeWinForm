@@ -118,6 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Ampeross_Qetto_2_Search_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Lib\1\Ampeross-Qetto-2-Search.24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ampeross_Qetto_2_Search_256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Lib\1\Ampeross-Qetto-2-Search.256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ampeross_Qetto_2_Search_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Lib\1\Ampeross-Qetto-2-Search.32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Gartoon_Team_Gartoon_Action_Go_bottom_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Lib\Gartoon-Team-Gartoon-Action-Go-bottom.128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -141,5 +150,26 @@
   </data>
   <data name="Gartoon_Team_Gartoon_Action_Tool_tweak_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Lib\Gartoon-Team-Gartoon-Action-Tool-tweak.16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Graphicloads_Colorful_Long_Shadow_Search_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Lib\1\Graphicloads-Colorful-Long-Shadow-Search.24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Graphicloads_Colorful_Long_Shadow_Search_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Lib\1\Graphicloads-Colorful-Long-Shadow-Search.32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Graphicloads_Colorful_Long_Shadow_Zoom_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Lib\1\Graphicloads-Colorful-Long-Shadow-Zoom.16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Graphicloads_Colorful_Long_Shadow_Zoom_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Lib\1\Graphicloads-Colorful-Long-Shadow-Zoom.24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Graphicloads_Colorful_Long_Shadow_Zoom_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Lib\1\Graphicloads-Colorful-Long-Shadow-Zoom.32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hopstarter_Sleek_Xp_Basic_Folder_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Lib\1\Hopstarter-Sleek-Xp-Basic-Folder.16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hopstarter_Sleek_Xp_Basic_Folder_Open_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Lib\1\Hopstarter-Sleek-Xp-Basic-Folder-Open.16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
