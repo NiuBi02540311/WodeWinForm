@@ -60,7 +60,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.MdiWindowListItem = this.windowsToolStripMenuItem;
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(841, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(821, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -107,7 +107,7 @@
             this.treeView1.Location = new System.Drawing.Point(3, 39);
             this.treeView1.Margin = new System.Windows.Forms.Padding(2);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(335, 525);
+            this.treeView1.Size = new System.Drawing.Size(231, 492);
             this.treeView1.TabIndex = 2;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -115,7 +115,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.panel1.Location = new System.Drawing.Point(271, 229);
+            this.panel1.Location = new System.Drawing.Point(221, 229);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(3, 125);
@@ -156,7 +156,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(341, 567);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(237, 534);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // tableLayoutPanel2
@@ -171,7 +171,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(333, 29);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(229, 29);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // txtSearchMenu
@@ -181,20 +181,22 @@
             this.txtSearchMenu.Font = new System.Drawing.Font("宋体", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtSearchMenu.Location = new System.Drawing.Point(3, 3);
             this.txtSearchMenu.Name = "txtSearchMenu";
-            this.txtSearchMenu.Size = new System.Drawing.Size(297, 23);
+            this.txtSearchMenu.Size = new System.Drawing.Size(193, 23);
             this.txtSearchMenu.TabIndex = 3;
             this.txtSearchMenu.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnfind
             // 
-            this.btnfind.BackgroundImage = global::WodeWinForm.Properties.Resources.Graphicloads_Colorful_Long_Shadow_Zoom_16;
-            this.btnfind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnfind.BackColor = System.Drawing.Color.Transparent;
+            this.btnfind.BackgroundImage = global::WodeWinForm.Properties.Resources.Graphicloads_Colorful_Long_Shadow_Zoom_32;
+            this.btnfind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnfind.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnfind.Location = new System.Drawing.Point(306, 3);
+            this.btnfind.FlatAppearance.BorderSize = 0;
+            this.btnfind.Location = new System.Drawing.Point(202, 3);
             this.btnfind.Name = "btnfind";
             this.btnfind.Size = new System.Drawing.Size(24, 23);
             this.btnfind.TabIndex = 4;
-            this.btnfind.UseVisualStyleBackColor = true;
+            this.btnfind.UseVisualStyleBackColor = false;
             // 
             // statusStrip1
             // 
@@ -214,12 +216,12 @@
             this.fullTabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.fullTabControl1.HotTrack = true;
             this.fullTabControl1.ItemSize = new System.Drawing.Size(0, 40);
-            this.fullTabControl1.Location = new System.Drawing.Point(341, 28);
+            this.fullTabControl1.Location = new System.Drawing.Point(237, 28);
             this.fullTabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.fullTabControl1.Name = "fullTabControl1";
             this.fullTabControl1.Padding = new System.Drawing.Point(12, 3);
             this.fullTabControl1.SelectedIndex = 0;
-            this.fullTabControl1.Size = new System.Drawing.Size(500, 567);
+            this.fullTabControl1.Size = new System.Drawing.Size(584, 534);
             this.fullTabControl1.TabIndex = 5;
             // 
             // Index
@@ -227,7 +229,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.ClientSize = new System.Drawing.Size(841, 595);
+            this.ClientSize = new System.Drawing.Size(821, 562);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.fullTabControl1);
             this.Controls.Add(this.tableLayoutPanel1);

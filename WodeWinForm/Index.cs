@@ -260,6 +260,7 @@ namespace WodeWinForm
                 //MessageBox.Show(mzhj.Text + " - 已打开");
                 return;
             }
+            mzhj.AutoScroll = true;
             mzhj.MdiParent = this;
             TabPage tb = new TabPage();
             tb.Padding = new Padding { All = 2 };

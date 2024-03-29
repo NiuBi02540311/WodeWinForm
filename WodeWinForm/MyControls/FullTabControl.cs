@@ -32,13 +32,13 @@ namespace WodeWinForm.MyControls
 
         public FullTabControl()
         {
-            //https://www.cnblogs.com/fangjb/p/15786779.html
+            //httpss://www.cnblogs.com/fangjb/p/15786779.html
             //InitializeComponent();
 
-           
+          
             // 设置TabControl的标签高度
             this.ItemSize = new Size(0, 40); // 宽度设置为0，自动计算；高度设置为100像素
-            this.ItemSize = new Size(0, 30);
+            this.ItemSize = new Size(0, 35);
             // 设置TabControl的标签与边缘的间距
             //tabControl.Padding = new Padding(10); // 默认情况下，高度不受Padding影响，但可以调整左右间距
 
@@ -93,7 +93,7 @@ namespace WodeWinForm.MyControls
                 }
                 StringFormat StringF = new StringFormat();
                 StringF.Alignment = StringAlignment.Near;
-                //StringF.LineAlignment = StringAlignment.Near;
+                //StringF.LineAlignment = StringAlignment.Center;
                 var ziti = new Font("黑体", 10);
                 //ziti = new Font("微软雅黑", 10);
                 ziti = e.State == DrawItemState.Selected ? new Font("微软雅黑", 13, FontStyle.Bold, GraphicsUnit.Pixel) : new Font("微软雅黑", 13, GraphicsUnit.Pixel);
@@ -103,8 +103,8 @@ namespace WodeWinForm.MyControls
                 //e.Graphics.DrawString(this.TabPages[e.Index].Text, this.Font, SystemBrushes.ControlText, tab.X + 2, tab.Y + 2);
                 //e.Graphics.DrawString(this.TabPages[e.Index].Text, this.Font, blue, tab.X + 2, tab.Y + 2);
                 var yanse = e.Index == this.SelectedIndex ? blue : black;
-                e.Graphics.DrawString(this.TabPages[e.Index].Text, ziti, yanse, tab.X + 1.5F, tab.Y + 20, StringF);
-
+                //e.Graphics.DrawString(this.TabPages[e.Index].Text, ziti, yanse, tab.X + 1.5F, tab.Y + 20, StringF);
+                e.Graphics.DrawString(this.TabPages[e.Index].Text, ziti, yanse, tab.X + 2, tab.Y + 20, StringF);
                 //绘制标签背景
                 //e.Graphics.FillRectangle(yellow, tab);
 
