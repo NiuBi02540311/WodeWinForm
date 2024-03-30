@@ -178,10 +178,10 @@
             // 
             this.txtSearchMenu.BackColor = System.Drawing.Color.White;
             this.txtSearchMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSearchMenu.Font = new System.Drawing.Font("宋体", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtSearchMenu.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtSearchMenu.Location = new System.Drawing.Point(3, 3);
             this.txtSearchMenu.Name = "txtSearchMenu";
-            this.txtSearchMenu.Size = new System.Drawing.Size(193, 23);
+            this.txtSearchMenu.Size = new System.Drawing.Size(193, 25);
             this.txtSearchMenu.TabIndex = 3;
             this.txtSearchMenu.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 

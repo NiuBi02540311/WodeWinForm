@@ -32,8 +32,9 @@ namespace WodeWinForm.View
             this.btn_LoadData = new System.Windows.Forms.Button();
             this.txt_CheckValue = new System.Windows.Forms.TextBox();
             this.buttonEx1 = new WodeWinForm.MyControls.ButtonEx();
-            this.treeView1 = new WodeWinForm.MyControls.BaseTreeView();
             this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+
             this.SuspendLayout();
             // 
             // btn_LoadData
@@ -49,10 +50,10 @@ namespace WodeWinForm.View
             // 
             // txt_CheckValue
             // 
-            this.txt_CheckValue.Location = new System.Drawing.Point(32, 326);
+            this.txt_CheckValue.Location = new System.Drawing.Point(32, 475);
             this.txt_CheckValue.Multiline = true;
             this.txt_CheckValue.Name = "txt_CheckValue";
-            this.txt_CheckValue.Size = new System.Drawing.Size(706, 43);
+            this.txt_CheckValue.Size = new System.Drawing.Size(706, 75);
             this.txt_CheckValue.TabIndex = 2;
             // 
             // buttonEx1
@@ -65,17 +66,6 @@ namespace WodeWinForm.View
             this.buttonEx1.Size = new System.Drawing.Size(128, 128);
             this.buttonEx1.TabIndex = 3;
             this.buttonEx1.UseVisualStyleBackColor = true;
-            // 
-            // treeView1
-            // 
-            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-            this.treeView1.FullRowSelect = true;
-            this.treeView1.HotTracking = true;
-            this.treeView1.ItemHeight = 23;
-            this.treeView1.Location = new System.Drawing.Point(32, 12);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(418, 296);
-            this.treeView1.TabIndex = 0;
             // 
             // uiSymbolButton1
             // 
@@ -90,17 +80,22 @@ namespace WodeWinForm.View
             this.uiSymbolButton1.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiSymbolButton1.Click += new System.EventHandler(this.uiSymbolButton1_Click);
             // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(42, 11);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(415, 450);
+            this.treeView1.TabIndex = 5;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 574);
+            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.uiSymbolButton1);
             this.Controls.Add(this.buttonEx1);
             this.Controls.Add(this.txt_CheckValue);
             this.Controls.Add(this.btn_LoadData);
-            this.Controls.Add(this.treeView1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -109,13 +104,13 @@ namespace WodeWinForm.View
         }
 
         #endregion
-
-        //private System.Windows.Forms.TreeView treeView1;
-        private MyControls.BaseTreeView treeView1;
+        //private MyControls.BaseTreeView treeView1;
         
         private System.Windows.Forms.Button btn_LoadData;
         private System.Windows.Forms.TextBox txt_CheckValue;
         private MyControls.ButtonEx buttonEx1;
         private Sunny.UI.UISymbolButton uiSymbolButton1;
+        private System.Windows.Forms.TreeView treeView1;
+
     }
 }

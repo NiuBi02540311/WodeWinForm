@@ -72,8 +72,9 @@ namespace WodeWinForm
             ErrorData.Columns.Add("assemblyName", System.Type.GetType("System.String"));
             ErrorData.Columns.Add("typeName", System.Type.GetType("System.String"));
 
-            ErrorData.Rows.Add("1", "0", "学生管理");
-            ErrorData.Rows.Add("2", "0", "教师管理");
+            ErrorData.Rows.Add("-1", "0", "Root");
+            ErrorData.Rows.Add("1", "-1", "学生管理");
+            ErrorData.Rows.Add("2", "-1", "教师管理");
             ErrorData.Rows.Add("3", "1", "学生信息录入", "WodeWinForm", "WodeWinForm.View.Form1");
             ErrorData.Rows.Add("4", "2", "教师信息录入", "WodeWinForm", "WodeWinForm.View.Form2");
             for (int i= 5; i < 16; i++)
@@ -429,7 +430,7 @@ namespace WodeWinForm
                 }
                 else
                 {
-                    Node.Text = Row[strName].ToString() + "\t" ;
+                    Node.Text = Row[strName].ToString();
                     Node.Name = Row[strName].ToString();
                     Node.Tag = Row[strID].ToString();
                     Node.ImageIndex = 1;

@@ -11,7 +11,8 @@ using System.Windows.Forms;
 
 namespace WodeWinForm.View
 {
-    public partial class Form1 : UIPage
+    //public partial class Form1 : UIPage
+    public partial class Form1 : Form
     {
         public Form1()
         {
@@ -194,7 +195,7 @@ namespace WodeWinForm.View
 
         private void uiSymbolButton1_Click(object sender, EventArgs e)
         {
-            ShowSuccessTip("轻便消息提示框 - 成功");
+            //ShowSuccessTip("轻便消息提示框 - 成功");
         }
     }
 }
