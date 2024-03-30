@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WodeWinForm.Properties;
+
 namespace WodeWinForm.MyControls
 {
     public class FullTabControl : TabControl
@@ -176,11 +178,11 @@ namespace WodeWinForm.MyControls
                     e.Graphics.DrawRectangle(p, tab);
                 }
                 //填充矩形框
-                Color recColor = e.State == DrawItemState.Selected ? Color.White : Color.Transparent;
-                using (Brush b = new SolidBrush(recColor))
-                {
-                    e.Graphics.FillRectangle(b, tab);
-                }
+                //Color recColor = e.State == DrawItemState.Selected ? Color.White : Color.Transparent;
+                //using (Brush b = new SolidBrush(recColor))
+                //{
+                //    e.Graphics.FillRectangle(b, tab);
+                //}
                 //画关闭符号
                 float w = 2F;
                 using (Pen objpen = new Pen(Color.Red, w))
@@ -354,8 +356,102 @@ namespace WodeWinForm.MyControls
             //Console.WriteLine("tabControl_DrawItem" + "  " + countTest.ToString());
             //countTest++;
         }
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        private void tclDemo_DrawItem(object sender, DrawItemEventArgs e)
+        {
+
+            //获取TabControl主控件的工作区域
+            Rectangle rec = this.ClientRectangle;
+            //获取背景图片，我的背景图片在项目资源文件中。
+
+            Image backImage = Resources.Gartoon_Team_Gartoon_Action_Go_bottom_128;
+            //新建一个StringFormat对象，用于对标签文字的布局设置
+
+            StringFormat StrFormat = new StringFormat();
+            StrFormat.LineAlignment = StringAlignment.Center;// 设置文字垂直方向居中
+            StrFormat.Alignment = StringAlignment.Center;// 设置文字水平方向居中          
+
+            // 标签背景填充颜色，也可以是图片
+
+            SolidBrush bru = new SolidBrush(Color.FromArgb(72, 181, 250));
+            SolidBrush bruFont = new SolidBrush(Color.FromArgb(217, 54, 26));// 标签字体颜色
+            Font font = new System.Drawing.Font("微软雅黑", 12F);//设置标签字体样式
+
+            //绘制主控件的背景
+            e.Graphics.DrawImage(backImage, 0, 0, this.Width, this.Height);
+
+            //绘制标签样式
+            for (int i = 0; i < this.TabPages.Count; i++)
+            {
+                //获取标签头的工作区域
+                Rectangle recChild = this.GetTabRect(i);
+                //绘制标签头背景颜色
+                e.Graphics.FillRectangle(bru, recChild);
+                //绘制标签头的文字
+                e.Graphics.DrawString(this.TabPages[i].Text, font, bruFont, recChild, StrFormat);
+
+            }
+        }
+
+        private void tabModuleMainItem_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Font font;
+            Brush bshBack;
+            Brush bshFore;
+            if (e.Index == this.SelectedIndex)
+            {
+                font = new Font("微软雅黑", 12.5f, FontStyle.Bold);
+                bshBack = new SolidBrush(Color.Yellow);
+                bshFore = Brushes.Black;
+            }
+            else
+            {
+                font = new Font("微软雅黑", 12f, FontStyle.Regular);
+                bshBack = new SolidBrush(Color.Gray);
+                bshFore = new SolidBrush(Color.White);
+            }
+
+            StringFormat sftTab = new StringFormat();
+            sftTab.LineAlignment = StringAlignment.Center;
+            sftTab.Alignment = StringAlignment.Center;
+
+            e.Graphics.FillRectangle(bshBack, e.Bounds);
+            Rectangle recTab = e.Bounds;
+            recTab = new Rectangle(recTab.X, recTab.Y + 4, recTab.Width, recTab.Height - 8);
+            e.Graphics.DrawString(this.TabPages[e.Index].Text, font, bshFore, recTab, sftTab);
+        }
+
+        private void tb_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            StringFormat sf = new StringFormat();
+
+            #region 头背景
+            sf.LineAlignment = StringAlignment.Center;
+            sf.Alignment = StringAlignment.Center;
+            Rectangle rec = this.ClientRectangle;
+            //获取背景图片，我的背景图片在项目资源文件中。
+            Image backImage = Properties.Resources.Ampeross_Qetto_2_Search_32;
+            e.Graphics.DrawImage(backImage, 0, 2, this.Width, this.ItemSize.Height + 2);
+            #endregion
+            #region  设置选择的标签的背景
+            if (e.Index == this.SelectedIndex)
+                e.Graphics.DrawImage(Properties.Resources.Ampeross_Qetto_2_Search_32, e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height);
+            else
+                e.Graphics.DrawImage(Properties.Resources.Ampeross_Qetto_2_Search_32, e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height);
+            e.Graphics.DrawString(((TabControl)sender).TabPages[e.Index].Text,
+            System.Windows.Forms.SystemInformation.MenuFont, new SolidBrush(Color.Black), e.Bounds, sf);
+            #endregion
+            #region 重写标签名
+            ColorConverter colorConverter = new ColorConverter();
+            Color cwhite = (Color)colorConverter.ConvertFromString("#2178ba");
+            SolidBrush white = new SolidBrush(cwhite);
+            Rectangle rect0 = this.GetTabRect(0);
+            StringFormat stringFormat = new StringFormat();
+            stringFormat.Alignment = StringAlignment.Center;
+            stringFormat.LineAlignment = StringAlignment.Center;
+            e.Graphics.DrawString("申请单号", new Font("微软雅黑", 12), white, rect0, stringFormat);
+            #endregion
+        }
 
 
 

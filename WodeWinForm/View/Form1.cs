@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sunny.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace WodeWinForm.View
 {
-    public partial class Form1 : Form
+    public partial class Form1 : UIPage
     {
         public Form1()
         {
@@ -184,6 +185,16 @@ namespace WodeWinForm.View
                     SetCheckedChildNodes(tn1, CheckState);
                 }
             }
+        }
+
+        private void uiWaitingBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uiSymbolButton1_Click(object sender, EventArgs e)
+        {
+            ShowSuccessTip("轻便消息提示框 - 成功");
         }
     }
 }

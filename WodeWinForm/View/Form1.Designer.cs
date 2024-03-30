@@ -33,12 +33,13 @@ namespace WodeWinForm.View
             this.txt_CheckValue = new System.Windows.Forms.TextBox();
             this.buttonEx1 = new WodeWinForm.MyControls.ButtonEx();
             this.treeView1 = new WodeWinForm.MyControls.BaseTreeView();
+            this.uiSymbolButton1 = new Sunny.UI.UISymbolButton();
             this.SuspendLayout();
             // 
             // btn_LoadData
             // 
             this.btn_LoadData.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btn_LoadData.Location = new System.Drawing.Point(573, 22);
+            this.btn_LoadData.Location = new System.Drawing.Point(477, 12);
             this.btn_LoadData.Name = "btn_LoadData";
             this.btn_LoadData.Size = new System.Drawing.Size(144, 96);
             this.btn_LoadData.TabIndex = 1;
@@ -48,10 +49,10 @@ namespace WodeWinForm.View
             // 
             // txt_CheckValue
             // 
-            this.txt_CheckValue.Location = new System.Drawing.Point(32, 431);
+            this.txt_CheckValue.Location = new System.Drawing.Point(32, 326);
             this.txt_CheckValue.Multiline = true;
             this.txt_CheckValue.Name = "txt_CheckValue";
-            this.txt_CheckValue.Size = new System.Drawing.Size(706, 105);
+            this.txt_CheckValue.Size = new System.Drawing.Size(706, 43);
             this.txt_CheckValue.TabIndex = 2;
             // 
             // buttonEx1
@@ -59,7 +60,7 @@ namespace WodeWinForm.View
             this.buttonEx1.BackgroundImage = global::WodeWinForm.Properties.Resources.Gartoon_Team_Gartoon_Action_Tool_tweak_128;
             this.buttonEx1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonEx1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEx1.Location = new System.Drawing.Point(573, 135);
+            this.buttonEx1.Location = new System.Drawing.Point(493, 134);
             this.buttonEx1.Name = "buttonEx1";
             this.buttonEx1.Size = new System.Drawing.Size(128, 128);
             this.buttonEx1.TabIndex = 3;
@@ -73,8 +74,21 @@ namespace WodeWinForm.View
             this.treeView1.ItemHeight = 23;
             this.treeView1.Location = new System.Drawing.Point(32, 12);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(515, 394);
+            this.treeView1.Size = new System.Drawing.Size(418, 296);
             this.treeView1.TabIndex = 0;
+            // 
+            // uiSymbolButton1
+            // 
+            this.uiSymbolButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiSymbolButton1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolButton1.Location = new System.Drawing.Point(477, 226);
+            this.uiSymbolButton1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiSymbolButton1.Name = "uiSymbolButton1";
+            this.uiSymbolButton1.Size = new System.Drawing.Size(202, 35);
+            this.uiSymbolButton1.TabIndex = 4;
+            this.uiSymbolButton1.Text = "uiSymbolButton1";
+            this.uiSymbolButton1.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiSymbolButton1.Click += new System.EventHandler(this.uiSymbolButton1_Click);
             // 
             // Form1
             // 
@@ -82,6 +96,7 @@ namespace WodeWinForm.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 574);
+            this.Controls.Add(this.uiSymbolButton1);
             this.Controls.Add(this.buttonEx1);
             this.Controls.Add(this.txt_CheckValue);
             this.Controls.Add(this.btn_LoadData);
@@ -101,5 +116,6 @@ namespace WodeWinForm.View
         private System.Windows.Forms.Button btn_LoadData;
         private System.Windows.Forms.TextBox txt_CheckValue;
         private MyControls.ButtonEx buttonEx1;
+        private Sunny.UI.UISymbolButton uiSymbolButton1;
     }
 }
