@@ -17,6 +17,7 @@ namespace WodeWinForm
     
     public partial class Index : Form
     {
+        private bool isExpandAll = false;
         private readonly DataTable MenuDataTable = null;
 
         private ImageList imageList;
@@ -43,7 +44,7 @@ namespace WodeWinForm
 
             this.Resize += ParentForm_Resize;
             this.Load += ParentForm_Load; //treeView1_NodeMouseDoubleClick
-            treeView1.NodeMouseDoubleClick += treeView1_NodeMouseDoubleClick;
+            treeViewMenu.NodeMouseDoubleClick += treeView1_NodeMouseDoubleClick;
 
             //ToolStripMenuItem1_Click();
             //ToolStripMenuItem1_Click2();
@@ -86,6 +87,7 @@ namespace WodeWinForm
         }
         private void LoadContextMenuStrip()
         {
+            #region fullTabControl1 contextMenuStrip
             contextMenuStrip = new ContextMenuStrip();
             var toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             var toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -116,6 +118,46 @@ namespace WodeWinForm
                 MessageBox.Show("关闭所有界面");
                 fullTabControl1.TabPages.Clear();
             };
+            #endregion
+
+            #region  treeViewMenu contextMenuStrip
+
+            //treeViewMenu.CollapseAll();
+            //treeViewMenu.ExpandAll();
+            ContextMenuStrip contextMenuStrip2 = new ContextMenuStrip();
+            var toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+
+
+            contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            toolStripMenuItem3});
+            contextMenuStrip2.Name = "contextMenuStrip2";
+            contextMenuStrip2.Size = new System.Drawing.Size(125, 26);
+
+
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            toolStripMenuItem3.Size = new System.Drawing.Size(124, 22);
+            toolStripMenuItem3.Text = "展开";
+
+            treeViewMenu.ContextMenuStrip = contextMenuStrip2;
+            contextMenuStrip2.Click += (object sender, EventArgs e) =>
+            {
+                //MessageBox.Show($"关闭当前界面【{fullTabControl1.SelectedTab.Text}】");
+                //fullTabControl1.TabPages.Remove(fullTabControl1.SelectedTab);
+                if (isExpandAll)
+                {
+                    treeViewMenu.CollapseAll();
+                    isExpandAll = false;
+                    toolStripMenuItem3.Text = "展开";
+                }
+                else
+                {
+                    isExpandAll = true; ;
+                    treeViewMenu.ExpandAll();
+                    toolStripMenuItem3.Text = "收起";
+                }
+            };
+            
+            #endregion
         }
         private void LoadPng()
         {
@@ -146,7 +188,7 @@ namespace WodeWinForm
                     //button1.ImageList = imageList1;
                     //button1.ImageIndex = 2;
 
-                    treeView1.ImageList = imageList;
+                    treeViewMenu.ImageList = imageList;
                     fullTabControl1.ImageList = imageList;
                 }
                
@@ -217,8 +259,8 @@ namespace WodeWinForm
         }
         private void LoadMenuNodes() //实现情况应该是从数据库及用户权限来进行动态创建菜单项
         {
-            this.treeView1.Nodes.Clear();
-            var root = this.treeView1.Nodes.Add("Root");
+            this.treeViewMenu.Nodes.Clear();
+            var root = this.treeViewMenu.Nodes.Add("Root");
             for (int i = 1; i <= 10; i++)
             {
                 var section = root.Nodes.Add("Section-" + i);
@@ -425,7 +467,7 @@ namespace WodeWinForm
                     Node.Name = Row[strName].ToString();
                     Node.Tag = Row[strID].ToString();
                     Node.ImageIndex = 1;
-                    this.treeView1.Nodes.Add(Node);
+                    this.treeViewMenu.Nodes.Add(Node);
                     AddTree(Int32.Parse(Row[strID].ToString()), Node, NewTable); //再次递归
                 }
                 else
@@ -449,10 +491,10 @@ namespace WodeWinForm
         {
             // 根节点ID值
             int i = 0;
-            this.treeView1.Nodes.Clear();
+            this.treeViewMenu.Nodes.Clear();
             AddTree(i, (TreeNode)null, NewTable);
-            treeView1.HideSelection = true;
-            treeView1.ShowLines = true;
+            treeViewMenu.HideSelection = true;
+            treeViewMenu.ShowLines = true;
         }
 
 
@@ -509,13 +551,13 @@ namespace WodeWinForm
             if(key == "")
             {
                 frmTree_Load();
-                treeView1.ExpandAll();
+                treeViewMenu.ExpandAll();
                 return;
             }
             var find = MenuDataTable.Select($" Name like '%{key}%'");
             if(find == null || find.Length == 0)
             {
-                treeView1.Nodes.Clear();
+                treeViewMenu.Nodes.Clear();
                 return;
             }
             string str = "";
@@ -531,7 +573,7 @@ namespace WodeWinForm
             NewTable = find.CopyToDataTable();
 
             frmTree_Load(NewTable);
-            treeView1.ExpandAll();
+            treeViewMenu.ExpandAll();
             
 
         }

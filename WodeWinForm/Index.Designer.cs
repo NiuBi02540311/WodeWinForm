@@ -34,7 +34,7 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showHideMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.treeViewMenu = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -100,16 +100,16 @@
             this.toolToolStripMenuItem.Size = new System.Drawing.Size(56, 26);
             this.toolToolStripMenuItem.Text = "Tool";
             // 
-            // treeView1
+            // treeViewMenu
             // 
-            this.treeView1.BackColor = System.Drawing.Color.White;
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(3, 39);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(2);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(231, 490);
-            this.treeView1.TabIndex = 2;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            this.treeViewMenu.BackColor = System.Drawing.Color.White;
+            this.treeViewMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeViewMenu.Location = new System.Drawing.Point(3, 39);
+            this.treeViewMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.treeViewMenu.Name = "treeViewMenu";
+            this.treeViewMenu.Size = new System.Drawing.Size(231, 490);
+            this.treeViewMenu.TabIndex = 2;
+            this.treeViewMenu.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // panel1
             // 
@@ -147,7 +147,7 @@
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.treeView1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.treeViewMenu, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 30);
@@ -256,7 +256,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem windowsToolStripMenuItem;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView treeViewMenu;
         private System.Windows.Forms.Panel panel1;
         private MyControls.FullTabControl fullTabControl1;
         private System.Windows.Forms.TabPage tabPage1;
