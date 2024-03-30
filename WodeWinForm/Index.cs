@@ -146,6 +146,7 @@ namespace WodeWinForm
                     //button1.ImageIndex = 2;
 
                     treeView1.ImageList = imageList;
+                    fullTabControl1.ImageList = imageList;
                 }
                
             }
@@ -263,7 +264,10 @@ namespace WodeWinForm
             mzhj.AutoScroll = true;
             mzhj.MdiParent = this;
             TabPage tb = new TabPage();
-            tb.Padding = new Padding { All = 2 };
+            //tb.ImageIndex = new Random().Next(0, imageList.Images.Count - 1);
+            //tb.BackColor = GlobalConfig.BackColor;
+            //tb.BackColor = Color.FromArgb(0, 255, 255, 255);
+            tb.Padding = new Padding { All = 2 };
             //tb.BackColor = GlobalConfig.BackColor;
             tb.Controls.Add(mzhj); //将窗体添加到form中
             //tb.Text = mzhj.Text ; //设定tabpage标签

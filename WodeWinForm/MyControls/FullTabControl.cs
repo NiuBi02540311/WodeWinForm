@@ -12,8 +12,32 @@ namespace WodeWinForm.MyControls
 
         protected override void OnPaint(PaintEventArgs pe)
         {
+            //this.DrawTitle(pe.Graphics);
             base.OnPaint(pe);
+
+
         }
+        //protected virtual void DrawTitle(Graphics g)
+        //{
+        //    Image imgButton = null;//OcvMana.Properties.Resources.button;
+
+        //    StringFormat sf = new StringFormat();
+        //    sf.Alignment = StringAlignment.Center;
+        //    sf.LineAlignment = StringAlignment.Center;
+        //    Font font = new System.Drawing.Font("微软雅黑", 10F, FontStyle.Bold);//设置标签字体样式
+        //    using (SolidBrush sb = new SolidBrush(Color.FromArgb(127, 0, 0, 0)))
+        //    {
+        //        for (int i = 0; i < this.TabPages.Count; i++)
+        //        {
+        //            Rectangle rect = this.GetTabRect(i);
+        //            Rectangle newRect = new Rectangle(rect.Left + 7, rect.Top, rect.Width - 7, rect.Height);
+
+        //            g.DrawImage(imgButton, newRect);
+        //            g.DrawString(this.TabPages[i].Text, font, Brushes.White, rect, sf);
+        //        }
+        //    }
+        //}
+
         public override Rectangle DisplayRectangle
         {
             get
@@ -27,6 +51,20 @@ namespace WodeWinForm.MyControls
         }
 
         const int CLOSE_SIZE = 15;
+        private Color _BackColor; //背景颜色 原文链接：https://blog.csdn.net/sinat_29136193/article/details/80652443
+        public override Color BackColor
+        {//重写backcolor属性 
+            get
+            {
+                return this._BackColor;
+            }
+            set
+            {
+                this._BackColor = value;
+            }
+        }
+
+
         //tabPage标签图片
         //Bitmap image = new Bitmap(@"C:\Users\admin\Desktop\下载 (1).jpg");
 
@@ -35,9 +73,17 @@ namespace WodeWinForm.MyControls
             //httpss://www.cnblogs.com/fangjb/p/15786779.html
             //InitializeComponent();
 
-          
-            // 设置TabControl的标签高度
-            this.ItemSize = new Size(0, 40); // 宽度设置为0，自动计算；高度设置为100像素
+            //this.SetStyle(ControlStyles.UserPaint, true);//用户自己绘制
+            //this.SetStyle(ControlStyles.ResizeRedraw, true);
+            //this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);   //
+            //this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            ////让控件支持透明色
+            //this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            //this.UpdateStyles();
+ 
+
+            // 设置TabControl的标签高度
+            this.ItemSize = new Size(0, 40); // 宽度设置为0，自动计算；高度设置为100像素
             this.ItemSize = new Size(0, 35);
             // 设置TabControl的标签与边缘的间距
             //tabControl.Padding = new Padding(10); // 默认情况下，高度不受Padding影响，但可以调整左右间距
@@ -50,7 +96,7 @@ namespace WodeWinForm.MyControls
             this.HotTrack = true;
             this.DrawItem += new DrawItemEventHandler(this.KDelTabControl_DrawItem);
             this.MouseDown += new MouseEventHandler(this.KDelTabControl_MouseDown);
-            //this.DrawItem  += tabControl_main_DrawItem;
+            
 
         }
 
@@ -69,7 +115,10 @@ namespace WodeWinForm.MyControls
                 //using (SolidBrush s = new SolidBrush(Color.White))
 
                 var BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-                var color = e.Index == this.SelectedIndex ? Color.LightYellow : BackColor;
+                var color = e.Index == this.SelectedIndex ? Color.LightGoldenrodYellow : BackColor;
+                //color = e.Index == this.SelectedIndex ? SystemColors.InactiveBorder : BackColor;
+                //color = e.Index == this.SelectedIndex ? Color.FromArgb(0, 255, 255, 255) : BackColor;
+                //color = e.Index == this.SelectedIndex ? BackColor : Color.FromArgb(0, 255, 255, 255);
                 //using (SolidBrush s = new SolidBrush(Color.LightYellow))
                 using (SolidBrush s = new SolidBrush(color))
                 {
@@ -274,6 +323,37 @@ namespace WodeWinForm.MyControls
             //    e.Graphics.DrawString(tabControlLeft.TabPages[i].Text, new Font("宋体", 12), FrontBrush, Rec, StringF);
             //}
         }
+
+        private void tabControl_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Image imgButton = null;//Mana.Properties.Resources.button;
+            Image imgBJ = null;//Mana.Properties.Resources.bg3;
+            //绘制主控件的背景
+            Rectangle Rect = new Rectangle(0, 0, this.Width, this.Height);
+            e.Graphics.DrawImage(imgBJ, Rect);
+
+            //新建一个StringFormat对象，用于对标签文字的布局设置
+            StringFormat StrFormat = new StringFormat();
+            StrFormat.LineAlignment = StringAlignment.Center;// 设置文字垂直方向居中
+            StrFormat.Alignment = StringAlignment.Center;// 设置文字水平方向居中          
+
+            SolidBrush bruFont = new SolidBrush(Color.FromArgb(255, 255, 255));// 标签字体颜色
+            Font font = new System.Drawing.Font("微软雅黑", 10F, FontStyle.Bold);//设置标签字体样式
+
+            //绘制标签样式         
+            for (int i = 0; i < this.TabPages.Count; i++)
+            {
+                //获取标签头的工作区域
+                Rectangle recChild = this.GetTabRect(i);
+                Rectangle newRect = new Rectangle(recChild.Left - 7, recChild.Top, recChild.Width - 7, recChild.Height);
+                //绘制标签头背景颜色
+                e.Graphics.DrawImage(imgButton, newRect);
+                //绘制标签头的文字
+                e.Graphics.DrawString(this.TabPages[i].Text, font, bruFont, newRect, StrFormat);
+            }
+            //Console.WriteLine("tabControl_DrawItem" + "  " + countTest.ToString());
+            //countTest++;
+        }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 

@@ -29,31 +29,21 @@ namespace WodeWinForm.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.treeView1 = new WodeWinForm.MyControls.BaseTreeView();
             this.btn_LoadData = new System.Windows.Forms.Button();
             this.txt_CheckValue = new System.Windows.Forms.TextBox();
             this.buttonEx1 = new WodeWinForm.MyControls.ButtonEx();
+            this.treeView1 = new WodeWinForm.MyControls.BaseTreeView();
             this.SuspendLayout();
-            // 
-            // treeView1
-            // 
-            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-            this.treeView1.FullRowSelect = true;
-            this.treeView1.HotTracking = true;
-            this.treeView1.ItemHeight = 23;
-            this.treeView1.Location = new System.Drawing.Point(32, 12);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(515, 394);
-            this.treeView1.TabIndex = 0;
             // 
             // btn_LoadData
             // 
+            this.btn_LoadData.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_LoadData.Location = new System.Drawing.Point(573, 22);
             this.btn_LoadData.Name = "btn_LoadData";
             this.btn_LoadData.Size = new System.Drawing.Size(144, 96);
             this.btn_LoadData.TabIndex = 1;
             this.btn_LoadData.Text = "button1";
-            this.btn_LoadData.UseVisualStyleBackColor = true;
+            this.btn_LoadData.UseVisualStyleBackColor = false;
             this.btn_LoadData.Click += new System.EventHandler(this.btn_LoadData_Click);
             // 
             // txt_CheckValue
@@ -68,11 +58,23 @@ namespace WodeWinForm.View
             // 
             this.buttonEx1.BackgroundImage = global::WodeWinForm.Properties.Resources.Gartoon_Team_Gartoon_Action_Tool_tweak_128;
             this.buttonEx1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonEx1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEx1.Location = new System.Drawing.Point(573, 135);
             this.buttonEx1.Name = "buttonEx1";
             this.buttonEx1.Size = new System.Drawing.Size(128, 128);
             this.buttonEx1.TabIndex = 3;
             this.buttonEx1.UseVisualStyleBackColor = true;
+            // 
+            // treeView1
+            // 
+            this.treeView1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
+            this.treeView1.FullRowSelect = true;
+            this.treeView1.HotTracking = true;
+            this.treeView1.ItemHeight = 23;
+            this.treeView1.Location = new System.Drawing.Point(32, 12);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(515, 394);
+            this.treeView1.TabIndex = 0;
             // 
             // Form1
             // 
