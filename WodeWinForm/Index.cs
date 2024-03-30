@@ -17,11 +17,11 @@ namespace WodeWinForm
     
     public partial class Index : Form
     {
-        private bool isExpandAll = false;
+        //private bool isExpandAll = false;
         private readonly DataTable MenuDataTable = null;
 
         private ImageList imageList;
-        private ContextMenuStrip contextMenuStrip;
+        //private ContextMenuStrip contextMenuStrip;
         public Index()
         {
             InitializeComponent();
@@ -88,7 +88,7 @@ namespace WodeWinForm
         private void LoadContextMenuStrip()
         {
             #region fullTabControl1 contextMenuStrip
-            contextMenuStrip = new ContextMenuStrip();
+            ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
             var toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             var toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
 
@@ -110,12 +110,16 @@ namespace WodeWinForm
             fullTabControl1.ContextMenuStrip = contextMenuStrip;
             toolStripMenuItem1.Click += (object sender, EventArgs e) =>
             {
-                MessageBox.Show($"关闭当前界面【{fullTabControl1.SelectedTab.Text}】");
+                //MessageBox.Show($"关闭当前界面【{fullTabControl1.SelectedTab.Text}】");
                 fullTabControl1.TabPages.Remove(fullTabControl1.SelectedTab);
             };
             toolStripMenuItem2.Click += (object sender, EventArgs e) =>
             {
-                MessageBox.Show("关闭所有界面");
+                if (MessageBox.Show($"确认要关闭所有界面？", "提醒", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    return;
+                }
+                //MessageBox.Show("关闭所有界面");
                 fullTabControl1.TabPages.Clear();
             };
             #endregion
@@ -143,15 +147,16 @@ namespace WodeWinForm
             {
                 //MessageBox.Show($"关闭当前界面【{fullTabControl1.SelectedTab.Text}】");
                 //fullTabControl1.TabPages.Remove(fullTabControl1.SelectedTab);
-                if (isExpandAll)
+                //if (isExpandAll)
+                if (toolStripMenuItem3.Text == "收起")
                 {
                     treeViewMenu.CollapseAll();
-                    isExpandAll = false;
+                    //isExpandAll = false;
                     toolStripMenuItem3.Text = "展开";
                 }
                 else
                 {
-                    isExpandAll = true; ;
+                    //isExpandAll = true; ;
                     treeViewMenu.ExpandAll();
                     toolStripMenuItem3.Text = "收起";
                 }
