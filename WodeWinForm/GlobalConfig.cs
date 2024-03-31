@@ -15,6 +15,12 @@ namespace WodeWinForm
 
         public static string LocalHostIP = GetIP();
 
+        public static int LoginUserID = 0;
+
+        public static string LoginUserName = "";
+
+        public static string LoginUserPassword = "";
+
         private static string GetIP(){
 
             var hostName = Dns.GetHostName();
@@ -32,4 +38,6 @@ namespace WodeWinForm
         }
 
     }
+
+
 }
