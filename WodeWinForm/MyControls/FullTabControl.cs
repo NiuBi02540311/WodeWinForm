@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WodeWinForm.Properties;
+using static System.Windows.Forms.Menu;
 
 namespace WodeWinForm.MyControls
 {
@@ -70,6 +71,7 @@ namespace WodeWinForm.MyControls
         //tabPage标签图片
         //Bitmap image = new Bitmap(@"C:\Users\admin\Desktop\下载 (1).jpg");
 
+        private MenuItemCollection menuItemCollection;
         public FullTabControl()
         {
             //httpss://www.cnblogs.com/fangjb/p/15786779.html
@@ -98,7 +100,7 @@ namespace WodeWinForm.MyControls
             this.HotTrack = true;
             this.DrawItem += new DrawItemEventHandler(this.KDelTabControl_DrawItem);
             this.MouseDown += new MouseEventHandler(this.KDelTabControl_MouseDown);
-            
+            //menuItemCollection = this.ContextMenu.MenuItems;
 
         }
 
@@ -246,6 +248,36 @@ namespace WodeWinForm.MyControls
                         this.SelectedTab = this.TabPages[this.TabPages.Count - 1];
                     }
                 }
+            }
+
+
+            if (e.Button == MouseButtons.Right)
+            {
+                int x = e.X, y = e.Y;
+                //计算关闭区域  
+                Rectangle tab = this.GetTabRect(this.SelectedIndex);
+                //tab.Offset(tab.Width - (CLOSE_SIZE + 3), 2);
+                //tab.Width = CLOSE_SIZE;
+                //tab.Height = CLOSE_SIZE;
+                //如果鼠标在区域内就关闭选项卡  
+                int w = e.Location.X + tab.Width;
+                int h = e.Location.Y + tab.Height;
+                bool isClose = x > tab.X && x < tab.Right && y > tab.Y && y < tab.Bottom;
+                isClose = x >= e.Location.X && x <= w && h >= e.Location.Y && y <= h;
+                
+                if (isClose == true) {
+                   // MessageBox.Show(" MouseButtons.Right");
+                }
+                else
+                {
+                    
+                }
+                this.ContextMenuStrip.Visible = isClose;
+                //foreach(MenuItem v in this.ContextMenuStrip.Visible)
+                //{
+                //    v.Visible = isClose;
+                // }
+
             }
         }
 

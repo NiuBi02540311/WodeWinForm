@@ -16,7 +16,20 @@ namespace WodeWinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Index());
+            //Application.Run(new Index());
+            //return;
+            Login login = new Login();
+            DialogResult Result  = login.ShowDialog();
+            //if (formLogin.ShowDialog() == DialogResult.OK)
+            if (Result.Equals(DialogResult.OK))
+            {
+                
+                Application.Run(new Index());
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
 }
