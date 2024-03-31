@@ -86,7 +86,7 @@ namespace WodeWinForm.MyControls
 
             // 设置TabControl的标签高度
             this.ItemSize = new Size(0, 40); // 宽度设置为0，自动计算；高度设置为100像素
-            this.ItemSize = new Size(0, 35);
+            this.ItemSize = new Size(0, 30);
             // 设置TabControl的标签与边缘的间距
             //tabControl.Padding = new Padding(10); // 默认情况下，高度不受Padding影响，但可以调整左右间距
 

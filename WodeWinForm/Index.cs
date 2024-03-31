@@ -42,16 +42,18 @@ namespace WodeWinForm
             //panel1.Left = treeView1.Left + treeView1.Width;
             //panel1.Height = panel1.Parent.Height;
 
+            //this.BackColor = GlobalConfig.BackColor;
             this.Resize += ParentForm_Resize;
             this.Load += ParentForm_Load; //treeView1_NodeMouseDoubleClick
             treeViewMenu.NodeMouseDoubleClick += treeView1_NodeMouseDoubleClick;
-
-            //ToolStripMenuItem1_Click();
-            //ToolStripMenuItem1_Click2();
+            //treeViewMenu.BackColor = GlobalConfig.BackColor;
+            
             MenuDataTable = GetMenuData();
             this.fullTabControl1.TabPages.Clear();
             //this.fullTabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             //this.fullTabControl1.DrawItem += tabControlLeft_DrawItem;
+            this.statusStrip2.BackColor = GlobalConfig.BackColor;
+            this.toolStripStatusLabel1.Text = $"本机IP地址:{GlobalConfig.LocalHostIP}   登录时间:{DateTime.Now}";
         }
 
         private void Form_Alert_Load(object sender, EventArgs e)
@@ -60,6 +62,7 @@ namespace WodeWinForm
             LoadPng();
             LoadContextMenuStrip();
             
+
     }
 
         private DataTable GetMenuData()
@@ -473,7 +476,7 @@ namespace WodeWinForm
                     Node.Tag = Row[strID].ToString();
                     Node.ImageIndex = 1;
                     this.treeViewMenu.Nodes.Add(Node);
-                    AddTree(Int32.Parse(Row[strID].ToString()), Node, NewTable); //再次递归
+                    AddTree(int.Parse(Row[strID].ToString()), Node, NewTable); //再次递归
                 }
                 else
                 {
@@ -482,7 +485,7 @@ namespace WodeWinForm
                     Node.Tag = Row[strID].ToString();
                     Node.ImageIndex = 1;
                     pNode.Nodes.Add(Node);
-                    AddTree(Int32.Parse(Row[strID].ToString()), Node, NewTable); //再次递归
+                    AddTree(int.Parse(Row[strID].ToString()), Node, NewTable); //再次递归
                 }
             }
         }

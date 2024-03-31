@@ -43,10 +43,13 @@
             this.txtSearchMenu = new System.Windows.Forms.TextBox();
             this.btnfind = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusStrip2 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.fullTabControl1 = new WodeWinForm.MyControls.FullTabControl();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.statusStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -190,11 +193,12 @@
             this.btnfind.BackColor = System.Drawing.Color.Transparent;
             this.btnfind.BackgroundImage = global::WodeWinForm.Properties.Resources.Gartoon_Team_Gartoon_Action_Tool_tweak_16;
             this.btnfind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnfind.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnfind.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnfind.FlatAppearance.BorderSize = 0;
-            this.btnfind.Location = new System.Drawing.Point(202, 3);
+            this.btnfind.Location = new System.Drawing.Point(200, 1);
+            this.btnfind.Margin = new System.Windows.Forms.Padding(1);
             this.btnfind.Name = "btnfind";
-            this.btnfind.Size = new System.Drawing.Size(24, 23);
+            this.btnfind.Size = new System.Drawing.Size(28, 27);
             this.btnfind.TabIndex = 4;
             this.btnfind.UseVisualStyleBackColor = false;
             // 
@@ -202,13 +206,30 @@
             // 
             this.statusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 568);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 538);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(841, 28);
+            this.statusStrip1.Size = new System.Drawing.Size(821, 24);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.Visible = false;
+            // 
+            // statusStrip2
+            // 
+            this.statusStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip2.Location = new System.Drawing.Point(237, 536);
+            this.statusStrip2.Name = "statusStrip2";
+            this.statusStrip2.Size = new System.Drawing.Size(584, 26);
+            this.statusStrip2.TabIndex = 10;
+            this.statusStrip2.Text = "statusStrip2";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(167, 20);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // fullTabControl1
             // 
@@ -230,6 +251,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
             this.ClientSize = new System.Drawing.Size(821, 562);
+            this.Controls.Add(this.statusStrip2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.fullTabControl1);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -247,6 +269,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.statusStrip2.ResumeLayout(false);
+            this.statusStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,5 +294,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnfind;
+        private System.Windows.Forms.StatusStrip statusStrip2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
