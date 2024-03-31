@@ -396,7 +396,7 @@ namespace WodeWinForm.MyControls
             Rectangle rec = this.ClientRectangle;
             //获取背景图片，我的背景图片在项目资源文件中。
 
-            Image backImage = Resources.Gartoon_Team_Gartoon_Action_Go_bottom_128;
+            Image backImage = Resources.Graphicloads_Colorful_Long_Shadow_Zoom_16;
             //新建一个StringFormat对象，用于对标签文字的布局设置
 
             StringFormat StrFormat = new StringFormat();

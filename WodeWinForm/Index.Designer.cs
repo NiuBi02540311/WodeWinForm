@@ -93,7 +93,7 @@
             // showHideMenuToolStripMenuItem
             // 
             this.showHideMenuToolStripMenuItem.Name = "showHideMenuToolStripMenuItem";
-            this.showHideMenuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.showHideMenuToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.showHideMenuToolStripMenuItem.Text = "HideMenu";
             this.showHideMenuToolStripMenuItem.Click += new System.EventHandler(this.showHideMenuToolStripMenuItem_Click);
             // 
@@ -191,7 +191,7 @@
             // btnfind
             // 
             this.btnfind.BackColor = System.Drawing.Color.Transparent;
-            this.btnfind.BackgroundImage = global::WodeWinForm.Properties.Resources.Gartoon_Team_Gartoon_Action_Tool_tweak_16;
+            this.btnfind.BackgroundImage = global::WodeWinForm.Properties.Resources.Graphicloads_Colorful_Long_Shadow_Zoom_16;
             this.btnfind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnfind.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnfind.FlatAppearance.BorderSize = 0;

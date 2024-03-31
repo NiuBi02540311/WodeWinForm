@@ -127,30 +127,6 @@
   <data name="Ampeross_Qetto_2_Search_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Lib\1\Ampeross-Qetto-2-Search.32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Gartoon_Team_Gartoon_Action_Go_bottom_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Lib\Gartoon-Team-Gartoon-Action-Go-bottom.128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Gartoon_Team_Gartoon_Action_Go_bottom_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Lib\Gartoon-Team-Gartoon-Action-Go-bottom.16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Gartoon_Team_Gartoon_Action_Go_jump_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Lib\Gartoon-Team-Gartoon-Action-Go-jump.128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Gartoon_Team_Gartoon_Action_Go_jump_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Lib\Gartoon-Team-Gartoon-Action-Go-jump.16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Gartoon_Team_Gartoon_Action_Go_last_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Lib\Gartoon-Team-Gartoon-Action-Go-last.128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Gartoon_Team_Gartoon_Action_Go_last_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Lib\Gartoon-Team-Gartoon-Action-Go-last.16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Gartoon_Team_Gartoon_Action_Tool_tweak_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Lib\Gartoon-Team-Gartoon-Action-Tool-tweak.128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Gartoon_Team_Gartoon_Action_Tool_tweak_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Lib\Gartoon-Team-Gartoon-Action-Tool-tweak.16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Graphicloads_Colorful_Long_Shadow_Search_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Lib\1\Graphicloads-Colorful-Long-Shadow-Search.24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

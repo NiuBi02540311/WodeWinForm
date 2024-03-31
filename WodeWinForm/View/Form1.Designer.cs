@@ -58,7 +58,7 @@ namespace WodeWinForm.View
             // 
             // buttonEx1
             // 
-            this.buttonEx1.BackgroundImage = global::WodeWinForm.Properties.Resources.Gartoon_Team_Gartoon_Action_Tool_tweak_128;
+            this.buttonEx1.BackgroundImage = global::WodeWinForm.Properties.Resources.Graphicloads_Colorful_Long_Shadow_Zoom_16;
             this.buttonEx1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonEx1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEx1.Location = new System.Drawing.Point(493, 134);

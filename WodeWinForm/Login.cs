@@ -1,34 +1,86 @@
-﻿using CCWin;
+﻿
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Drawing;
 namespace WodeWinForm
 {
-    public partial class Login : Skin_VS
+    public partial class Login : Form
     {
-        //CCSkinMain Skin_Color，Skin_DevExpress，Skin_Mac，Skin_Metro，Skin_VS
+        //CCSkinMain ，Skin_Color，Skin_DevExpress，Skin_Mac，Skin_Metro，Skin_VS
         public Login()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            uiTextBoxUserName.Clear();
+            uiTextBoxPassWord.Clear();
         }
 
-        private void uiButton1_Click(object sender, EventArgs e)
+        private async void uiButton1_Click(object sender, EventArgs e)
         {
+            string u = uiTextBoxUserName.Text.Trim();
+            string p = uiTextBoxUserName.Text.Trim();
+            if(u == "" || p == "")
+            {
+                uiPanelLoginMsg.Text = "账号或密码不能为空";
+                uiPanelLoginMsg.ForeColor = Color.Red;
+                return;
+            }
+            uiPanelLoginMsg.ForeColor = Color.Black;
             //登陆窗体，验证成功执行代码 
+            uiPanelLoginMsg.Text = "正在登录，请稍后";
+            await Task.Delay(3000);
+            uiPanelLoginMsg.Text = "登录OK";
+            await Task.Delay(1000);
             this.DialogResult = DialogResult.OK;
 
         }
 
         private void uiButton2_Click(object sender, EventArgs e)
         {
-            this.Close();
+           
+
+            try
+            {
+                //对消息框进行判断
+                if (MessageBox.Show("你确定要退出吗？", "退出", MessageBoxButtons.YesNo,
+                 MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            }
+            //捕获异常
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+ 
+        }
+
+        private void skinButton1_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void uiButton1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uiButton2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uiLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uiLabel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
     /*

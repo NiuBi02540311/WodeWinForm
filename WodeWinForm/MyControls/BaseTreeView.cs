@@ -33,11 +33,11 @@ namespace WodeWinForm.MyControls
             //节点背景绘制
             if (e.Node.IsSelected)
             {
-                e.Graphics.DrawImage(Resources.Gartoon_Team_Gartoon_Action_Go_jump_16, e.Bounds);
+                e.Graphics.DrawImage(Resources.Ampeross_Qetto_2_Search_24, e.Bounds);
             }
             else if ((e.State & TreeNodeStates.Hot) != 0)//|| currentMouseMoveNode == e.Node)
             {
-                e.Graphics.DrawImage(Resources.Gartoon_Team_Gartoon_Action_Tool_tweak_16, e.Bounds);
+                e.Graphics.DrawImage(Resources.Ampeross_Qetto_2_Search_24, e.Bounds);
             }
             else
             {
@@ -47,11 +47,11 @@ namespace WodeWinForm.MyControls
             //节点头图标绘制
             if (e.Node.IsExpanded)
             {
-                e.Graphics.DrawImage(Resources.Gartoon_Team_Gartoon_Action_Go_bottom_16, e.Node.Bounds.X - 12, e.Node.Bounds.Y + 6);
+                e.Graphics.DrawImage(Resources.Ampeross_Qetto_2_Search_24, e.Node.Bounds.X - 12, e.Node.Bounds.Y + 6);
             }
             else if (e.Node.IsExpanded == false && e.Node.Nodes.Count > 0)
             {
-                e.Graphics.DrawImage(Resources.Gartoon_Team_Gartoon_Action_Go_last_16, e.Node.Bounds.X - 12, e.Node.Bounds.Y + 6);
+                e.Graphics.DrawImage(Resources.Ampeross_Qetto_2_Search_24, e.Node.Bounds.X - 12, e.Node.Bounds.Y + 6);
             }
 
             //文本绘制
