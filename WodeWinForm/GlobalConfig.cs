@@ -11,8 +11,10 @@ namespace WodeWinForm
     public static class GlobalConfig
     {
         public static Color BackColor = Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-        //public static Color BackColor2 = Color.FromArgb(0, 140, 190, 190);
+        public static Color BackColor2 = Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
 
+        //public static Color BackColor2 = Color.FromArgb(0, 140, 190, 190);
+        // 80, 160, 255
         public static string LocalHostIP = GetIP();
 
         public static int LoginUserID = 0;

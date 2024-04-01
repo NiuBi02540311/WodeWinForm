@@ -664,7 +664,7 @@ namespace WodeWinForm
                 // 保存到文件
                 xmlDoc.Save("config.xml");
             }
-           
+             
         }
 
         private void fullTabControl1_SelectedIndexChanged(object sender, EventArgs e)

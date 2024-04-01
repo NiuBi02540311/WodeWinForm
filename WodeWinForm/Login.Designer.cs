@@ -38,7 +38,7 @@ namespace WodeWinForm
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.uiPanel4 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel2 = new Sunny.UI.UITableLayoutPanel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chk_rem = new System.Windows.Forms.CheckBox();
             this.uiLabel3 = new Sunny.UI.UILabel();
             this.uiTableLayoutPanel3 = new Sunny.UI.UITableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -197,7 +197,7 @@ namespace WodeWinForm
             this.uiTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.uiTableLayoutPanel2.Controls.Add(this.uiButton2, 2, 0);
             this.uiTableLayoutPanel2.Controls.Add(this.uiButton1, 1, 0);
-            this.uiTableLayoutPanel2.Controls.Add(this.checkBox1, 3, 0);
+            this.uiTableLayoutPanel2.Controls.Add(this.chk_rem, 3, 0);
             this.uiTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.uiTableLayoutPanel2.Name = "uiTableLayoutPanel2";
@@ -207,18 +207,18 @@ namespace WodeWinForm
             this.uiTableLayoutPanel2.TabIndex = 0;
             this.uiTableLayoutPanel2.TagString = null;
             // 
-            // checkBox1
+            // chk_rem
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.checkBox1.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.checkBox1.ForeColor = System.Drawing.Color.Indigo;
-            this.checkBox1.Location = new System.Drawing.Point(447, 85);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(142, 21);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "remember me";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chk_rem.AutoSize = true;
+            this.chk_rem.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.chk_rem.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.chk_rem.ForeColor = System.Drawing.Color.Indigo;
+            this.chk_rem.Location = new System.Drawing.Point(447, 85);
+            this.chk_rem.Name = "chk_rem";
+            this.chk_rem.Size = new System.Drawing.Size(142, 21);
+            this.chk_rem.TabIndex = 2;
+            this.chk_rem.Text = "remember me";
+            this.chk_rem.UseVisualStyleBackColor = true;
             // 
             // uiLabel3
             // 
@@ -245,7 +245,7 @@ namespace WodeWinForm
             this.uiTableLayoutPanel3.RowCount = 1;
             this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.uiTableLayoutPanel3.Size = new System.Drawing.Size(415, 44);
-            this.uiTableLayoutPanel3.TabIndex = 9;
+            this.uiTableLayoutPanel3.TabIndex = 3;
             this.uiTableLayoutPanel3.TagString = null;
             // 
             // pictureBox1
@@ -358,6 +358,6 @@ namespace WodeWinForm
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Sunny.UI.UITextBox uiTextBoxCode;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chk_rem;
     }
 }

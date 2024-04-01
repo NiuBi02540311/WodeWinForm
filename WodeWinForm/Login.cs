@@ -11,6 +11,8 @@ namespace WodeWinForm
     public partial class Login : Form
     {
         //CCSkinMain ，Skin_Color，Skin_DevExpress，Skin_Mac，Skin_Metro，Skin_VS
+
+        private string xmluiTextBoxUserName;
         public Login()
         {
             InitializeComponent();
@@ -24,6 +26,8 @@ namespace WodeWinForm
         {
             uiTextBoxUserName.Focus();
             pictureBox1_Click(null, null);
+            xmluiTextBoxUserName = Tool.XmlHelper.Getchild("uiTextBoxUserName");
+            uiTextBoxUserName.Text = xmluiTextBoxUserName;
         }
         private async void uiButton1_Click(object sender, EventArgs e)
         {
@@ -47,6 +51,23 @@ namespace WodeWinForm
             uiPanelLoginMsg.Text = "正在登录，请稍后";
             if(1 == 1)
             {
+                if (chk_rem.Checked)
+                {
+                    if(xmluiTextBoxUserName != "")
+                    {
+                        if (xmluiTextBoxUserName != u)
+                        {
+                            Tool.XmlHelper.Eidtchild("uiTextBoxUserName", u);
+                        }
+
+                    }
+                    else
+                    {
+                        Tool.XmlHelper.Addchild("uiTextBoxUserName", u);
+                    }
+                    
+                   
+                }
                 await Task.Delay(3000);
                 uiPanelLoginMsg.Text = "登录OK";
                 await Task.Delay(1000);
