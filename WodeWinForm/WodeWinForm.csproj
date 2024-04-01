@@ -185,5 +185,8 @@
   <ItemGroup>
     <None Include="Lib\1\Graphicloads-Colorful-Long-Shadow-Zoom.16.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tool\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

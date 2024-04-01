@@ -3,6 +3,9 @@ using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using System.IO;
+using System.Drawing.Imaging;
+
 namespace WodeWinForm
 {
     public partial class Login : Form
@@ -15,10 +18,17 @@ namespace WodeWinForm
             this.MinimizeBox = false;
             uiTextBoxUserName.Clear();
             uiTextBoxPassWord.Clear();
+            uiTextBoxCode.Clear();
         }
 
         private async void uiButton1_Click(object sender, EventArgs e)
         {
+            if(uiTextBoxCode.Text.ToLower() != CheckCode.ToLower())
+            {
+                uiPanelLoginMsg.Text = "验证码不正确，请检查！";
+                uiPanelLoginMsg.ForeColor = Color.Red;
+                return;
+            }
             string u = uiTextBoxUserName.Text.Trim();
             string p = uiTextBoxUserName.Text.Trim();
             if(u == "" || p == "")
@@ -27,13 +37,23 @@ namespace WodeWinForm
                 uiPanelLoginMsg.ForeColor = Color.Red;
                 return;
             }
+            uiButton1.Enabled = false;
             uiPanelLoginMsg.ForeColor = Color.Black;
             //登陆窗体，验证成功执行代码 
             uiPanelLoginMsg.Text = "正在登录，请稍后";
-            await Task.Delay(3000);
-            uiPanelLoginMsg.Text = "登录OK";
-            await Task.Delay(1000);
-            this.DialogResult = DialogResult.OK;
+            if(1 == 0)
+            {
+                await Task.Delay(3000);
+                uiPanelLoginMsg.Text = "登录OK";
+                await Task.Delay(1000);
+                GlobalConfig.LoginUserName = u;
+                GlobalConfig.LoginUserPassword = p;
+                this.DialogResult = DialogResult.OK;
+                return;
+            }
+            uiPanelLoginMsg.Text = "账号或密码错误，请重新输入！";
+            uiPanelLoginMsg.ForeColor = Color.Red;
+            uiButton1.Enabled = true;
 
         }
 
@@ -81,6 +101,167 @@ namespace WodeWinForm
         private void uiLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            GetLettersNumbers();
+            //GetLettersNumbers2();
+        }
+        private string CheckCode = "";
+        /// <summary>
+        /// 字母和数字
+        /// </summary>
+        private void GetLettersNumbers()
+        {
+            //颜色列表，用于验证码、噪线、噪点 
+            Color[] color = { Color.Black, Color.Red, Color.Blue, Color.Green, Color.Orange, Color.Brown, Color.Brown, Color.DarkBlue };
+            //字体列表，用于验证码 
+            string[] font = { "Times New Roman" };
+            //验证码的字符集，去掉了一些容易混淆的字符 
+            char[] character = { '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'd', 'e', 'f', 'h', 'k', 'm', 'n', 'r', 'x', 'y', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'R', 'S', 'T', 'W', 'X', 'Y' };
+            Random rnd = new Random();
+            //生成验证码字符串 
+            string txt = "";
+            for (int i = 0; i < 4; i++)
+            {
+                txt += character[rnd.Next(character.Length)];
+            }
+            //创建画布
+            int codeW = txt.Length * 22;
+            int codeH = 22;
+            codeW = pictureBox1.Width;
+            codeH = pictureBox1.Height;
+            Bitmap bmp = new Bitmap(codeW, codeH);
+            Graphics g = Graphics.FromImage(bmp);
+            g.Clear(Color.White);
+            //画噪线 
+            for (int i = 0; i < 3; i++)
+            {
+                int x1 = rnd.Next(codeW);
+                int y1 = rnd.Next(codeH);
+                int x2 = rnd.Next(codeW);
+                int y2 = rnd.Next(codeH);
+                Color clr = color[rnd.Next(color.Length)];
+                g.DrawLine(new Pen(clr), x1, y1, x2, y2);
+            }
+            //画验证码字符串 
+            for (int i = 0; i < txt.Length; i++)
+            {
+                string fnt = font[rnd.Next(font.Length)];
+                Font ft = new Font(fnt, 28);
+                Color clr = color[rnd.Next(color.Length)];
+                g.DrawString(txt[i].ToString(), ft, new SolidBrush(clr), (float)i * 18, (float)0);
+            }
+            pictureBox1.Image = bmp;
+
+            //uiTextBoxCode.Text = txt;
+            CheckCode = txt;
+        }
+
+        private void GetLettersNumbers2()
+        {
+            string code = RandomVerificationCode(5);
+            Bitmap bitmap = DrawImage(code);
+            pictureBox1.Image = bitmap;
+        }
+
+        private Bitmap DrawImage(string code)
+        {
+            Color[] colors = {
+        Color.Red, Color.OrangeRed,Color.SaddleBrown,
+        Color.LimeGreen,Color.Green,Color.MediumAquamarine,
+        Color.Blue,Color.MediumOrchid,Color.Black,
+        Color.DarkBlue,Color.Orange,Color.Brown,
+        Color.DarkCyan,Color.Purple
+    };
+            string[] fonts = { "Verdana", "Microsoft Sans Serif", "Comic Sans MS", "Arial", "宋体" };
+            Random random = new Random();
+            // 创建一个 Bitmap 图片类型对象
+            Bitmap bitmap = new Bitmap(code.Length * 18, 32);
+            bitmap = new Bitmap(pictureBox1.Width,pictureBox1.Height);
+            // 创建一个图形画笔
+            Graphics graphics = Graphics.FromImage(bitmap);
+            // 将图片背景填充成白色
+            graphics.Clear(Color.White);
+            // 绘制验证码噪点
+            for (int i = 0; i < random.Next(60, 80); i++)
+            {
+                int pointX = random.Next(bitmap.Width);
+                int pointY = random.Next(bitmap.Height);
+                graphics.DrawLine(new Pen(Color.LightGray, 1), pointX, pointY, pointX + 1, pointY);
+            }
+            // 绘制随机线条 1 条
+            graphics.DrawLine(
+                    new Pen(colors[random.Next(colors.Length)], random.Next(3)),
+                    new Point(
+                        random.Next(bitmap.Width),
+                        random.Next(bitmap.Height)),
+                    new Point(random.Next(bitmap.Width),
+                    random.Next(bitmap.Height)));
+            // 绘制验证码
+            for (int i = 0; i < code.Length; i++)
+            {
+                graphics.DrawString(
+                    code.Substring(i, 1),
+                    new Font(fonts[random.Next(fonts.Length)], 25, FontStyle.Bold),
+                    new SolidBrush(colors[random.Next(colors.Length)]),16 * i + 1, random.Next(0, 5)
+                    );
+            }
+            // 绘制验证码噪点
+            for (int i = 0; i < random.Next(30, 50); i++)
+            {
+                int pointX = random.Next(bitmap.Width);
+                int pointY = random.Next(bitmap.Height);
+                graphics.DrawLine(new Pen(colors[random.Next(colors.Length)], 1), pointX, pointY, pointX, pointY + 1);
+            }
+            // 绘制随机线条 1 条
+            graphics.DrawLine(
+                    new Pen(colors[random.Next(colors.Length)], random.Next(3)),
+                    new Point(
+                        random.Next(bitmap.Width),
+                        random.Next(bitmap.Height)),
+                    new Point(random.Next(bitmap.Width),
+                    random.Next(bitmap.Height)));
+            return bitmap;
+        }
+
+        private  string RandomVerificationCode(int lengths)
+        {
+            string[] chars = new string[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "P", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+            string code = "";
+            Random random = new Random();
+            for (int i = 0; i < lengths; i++)
+            {
+                code += chars[random.Next(chars.Length)];
+            }
+            return code;
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            pictureBox1_Click(null, null);
+        }
+
+        //如果是前端展示的话，还需要将图片数据转换成 Base64 的图片数据，代码如下所示。
+        private  string BitmapToBase64Str(Bitmap bitmap)
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                bitmap.Save(memoryStream, ImageFormat.Jpeg);
+                byte[] bytes = memoryStream.ToArray();
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
+
+        private void uiSymbolButton1_Click(object sender, EventArgs e)
+        {
+            uiButton1_Click(null, null);
+        }
+
+        private void uiSymbolButton2_Click(object sender, EventArgs e)
+        {
+            uiButton2_Click(null, null);
         }
     }
     /*

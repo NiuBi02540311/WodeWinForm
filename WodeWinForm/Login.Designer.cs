@@ -36,16 +36,21 @@ namespace WodeWinForm
             this.uiTextBoxPassWord = new Sunny.UI.UITextBox();
             this.uiTableLayoutPanel1 = new Sunny.UI.UITableLayoutPanel();
             this.uiLabel1 = new Sunny.UI.UILabel();
-            this.uiPanel1 = new Sunny.UI.UIPanel();
-            this.uiPanelLoginMsg = new Sunny.UI.UIPanel();
-            this.uiPanel3 = new Sunny.UI.UIPanel();
             this.uiPanel4 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel2 = new Sunny.UI.UITableLayoutPanel();
             this.uiLabel3 = new Sunny.UI.UILabel();
+            this.uiPanel1 = new Sunny.UI.UIPanel();
+            this.uiPanelLoginMsg = new Sunny.UI.UIPanel();
+            this.uiPanel3 = new Sunny.UI.UIPanel();
+            this.uiTableLayoutPanel3 = new Sunny.UI.UITableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.uiTextBoxCode = new Sunny.UI.UITextBox();
             this.uiTableLayoutPanel1.SuspendLayout();
-            this.uiPanel3.SuspendLayout();
             this.uiPanel4.SuspendLayout();
             this.uiTableLayoutPanel2.SuspendLayout();
+            this.uiPanel3.SuspendLayout();
+            this.uiTableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // uiButton1
@@ -139,6 +144,7 @@ namespace WodeWinForm
             this.uiTableLayoutPanel1.Controls.Add(this.uiLabel1, 0, 0);
             this.uiTableLayoutPanel1.Controls.Add(this.uiPanel4, 0, 3);
             this.uiTableLayoutPanel1.Controls.Add(this.uiLabel3, 0, 2);
+            this.uiTableLayoutPanel1.Controls.Add(this.uiTableLayoutPanel3, 1, 2);
             this.uiTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.uiTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(20);
@@ -163,46 +169,6 @@ namespace WodeWinForm
             this.uiLabel1.TabIndex = 6;
             this.uiLabel1.Text = "UserName";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiPanel1
-            // 
-            this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.uiPanel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiPanel1.Location = new System.Drawing.Point(0, 0);
-            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel1.Name = "uiPanel1";
-            this.uiPanel1.Size = new System.Drawing.Size(550, 125);
-            this.uiPanel1.TabIndex = 7;
-            this.uiPanel1.Text = "图片展示区域";
-            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiPanelLoginMsg
-            // 
-            this.uiPanelLoginMsg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.uiPanelLoginMsg.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiPanelLoginMsg.Location = new System.Drawing.Point(0, 385);
-            this.uiPanelLoginMsg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanelLoginMsg.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanelLoginMsg.Name = "uiPanelLoginMsg";
-            this.uiPanelLoginMsg.Size = new System.Drawing.Size(550, 56);
-            this.uiPanelLoginMsg.TabIndex = 8;
-            this.uiPanelLoginMsg.Text = "登录消息展示区域";
-            this.uiPanelLoginMsg.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiPanel3
-            // 
-            this.uiPanel3.Controls.Add(this.uiTableLayoutPanel1);
-            this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiPanel3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiPanel3.Location = new System.Drawing.Point(0, 125);
-            this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiPanel3.Name = "uiPanel3";
-            this.uiPanel3.Size = new System.Drawing.Size(550, 260);
-            this.uiPanel3.TabIndex = 9;
-            this.uiPanel3.Text = "uiPanel3";
-            this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uiPanel4
             // 
@@ -249,6 +215,89 @@ namespace WodeWinForm
             this.uiLabel3.Text = "验证码";
             this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // uiPanel1
+            // 
+            this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uiPanel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiPanel1.Location = new System.Drawing.Point(0, 0);
+            this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel1.Name = "uiPanel1";
+            this.uiPanel1.Size = new System.Drawing.Size(550, 125);
+            this.uiPanel1.TabIndex = 7;
+            this.uiPanel1.Text = "图片展示区域";
+            this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiPanelLoginMsg
+            // 
+            this.uiPanelLoginMsg.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.uiPanelLoginMsg.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiPanelLoginMsg.Location = new System.Drawing.Point(0, 385);
+            this.uiPanelLoginMsg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanelLoginMsg.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanelLoginMsg.Name = "uiPanelLoginMsg";
+            this.uiPanelLoginMsg.Size = new System.Drawing.Size(550, 56);
+            this.uiPanelLoginMsg.TabIndex = 8;
+            this.uiPanelLoginMsg.Text = "登录消息展示区域";
+            this.uiPanelLoginMsg.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiPanel3
+            // 
+            this.uiPanel3.Controls.Add(this.uiTableLayoutPanel1);
+            this.uiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiPanel3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiPanel3.Location = new System.Drawing.Point(0, 125);
+            this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiPanel3.Name = "uiPanel3";
+            this.uiPanel3.Size = new System.Drawing.Size(550, 260);
+            this.uiPanel3.TabIndex = 9;
+            this.uiPanel3.Text = "uiPanel3";
+            this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiTableLayoutPanel3
+            // 
+            this.uiTableLayoutPanel3.ColumnCount = 2;
+            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel3.Controls.Add(this.pictureBox1, 0, 0);
+            this.uiTableLayoutPanel3.Controls.Add(this.uiTextBoxCode, 1, 0);
+            this.uiTableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTableLayoutPanel3.Location = new System.Drawing.Point(167, 103);
+            this.uiTableLayoutPanel3.Name = "uiTableLayoutPanel3";
+            this.uiTableLayoutPanel3.RowCount = 1;
+            this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(380, 44);
+            this.uiTableLayoutPanel3.TabIndex = 9;
+            this.uiTableLayoutPanel3.TagString = null;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(184, 38);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // uiTextBoxCode
+            // 
+            this.uiTextBoxCode.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBoxCode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTextBoxCode.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiTextBoxCode.Location = new System.Drawing.Point(194, 5);
+            this.uiTextBoxCode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBoxCode.MinimumSize = new System.Drawing.Size(1, 16);
+            this.uiTextBoxCode.Name = "uiTextBoxCode";
+            this.uiTextBoxCode.Padding = new System.Windows.Forms.Padding(5);
+            this.uiTextBoxCode.ShowText = false;
+            this.uiTextBoxCode.Size = new System.Drawing.Size(182, 34);
+            this.uiTextBoxCode.TabIndex = 1;
+            this.uiTextBoxCode.Text = "uiTextBox1";
+            this.uiTextBoxCode.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uiTextBoxCode.Watermark = "";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -261,10 +310,13 @@ namespace WodeWinForm
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.uiTableLayoutPanel1.ResumeLayout(false);
-            this.uiPanel3.ResumeLayout(false);
             this.uiPanel4.ResumeLayout(false);
             this.uiTableLayoutPanel2.ResumeLayout(false);
+            this.uiPanel3.ResumeLayout(false);
+            this.uiTableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -284,5 +336,8 @@ namespace WodeWinForm
         private Sunny.UI.UIPanel uiPanel4;
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel2;
         private Sunny.UI.UILabel uiLabel3;
+        private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Sunny.UI.UITextBox uiTextBoxCode;
     }
 }
