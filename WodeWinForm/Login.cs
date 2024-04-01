@@ -16,11 +16,15 @@ namespace WodeWinForm
             InitializeComponent();
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            uiTextBoxUserName.Clear();
+            uiTextBoxUserName.Text = "";
             uiTextBoxPassWord.Clear();
             uiTextBoxCode.Clear();
         }
-
+        private void Login_Load(object sender, EventArgs e)
+        {
+            uiTextBoxUserName.Focus();
+            pictureBox1_Click(null, null);
+        }
         private async void uiButton1_Click(object sender, EventArgs e)
         {
             if(uiTextBoxCode.Text.ToLower() != CheckCode.ToLower())
@@ -41,7 +45,7 @@ namespace WodeWinForm
             uiPanelLoginMsg.ForeColor = Color.Black;
             //登陆窗体，验证成功执行代码 
             uiPanelLoginMsg.Text = "正在登录，请稍后";
-            if(1 == 0)
+            if(1 == 1)
             {
                 await Task.Delay(3000);
                 uiPanelLoginMsg.Text = "登录OK";
@@ -83,25 +87,14 @@ namespace WodeWinForm
             this.DialogResult = DialogResult.OK;
         }
 
-        private void uiButton1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uiButton2_Click_1(object sender, EventArgs e)
-        {
-
-        }
+         
 
         private void uiLabel2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void uiLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -238,10 +231,7 @@ namespace WodeWinForm
             return code;
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-            pictureBox1_Click(null, null);
-        }
+        
 
         //如果是前端展示的话，还需要将图片数据转换成 Base64 的图片数据，代码如下所示。
         private  string BitmapToBase64Str(Bitmap bitmap)
@@ -262,6 +252,39 @@ namespace WodeWinForm
         private void uiSymbolButton2_Click(object sender, EventArgs e)
         {
             uiButton2_Click(null, null);
+        }
+
+        private void uiTextBoxPassWord_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter) return;
+            if(uiTextBoxCode.Text.Trim() == "")
+            {
+                uiTextBoxCode.Focus();
+                return;
+            }
+            uiButton1_Click(null, null);
+        }
+
+        private void uiTextBoxUserName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter) return;
+
+            if (uiTextBoxPassWord.Text.Trim() == "")
+            {
+                uiTextBoxPassWord.Focus();
+                return;
+            }
+            if (uiTextBoxCode.Text.Trim() == "")
+            {
+                uiTextBoxCode.Focus();
+                return;
+            }
+            uiButton1_Click(null, null);
+        }
+
+        private void uiTextBoxCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            uiButton1_Click(null, null);
         }
     }
     /*

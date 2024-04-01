@@ -38,19 +38,20 @@ namespace WodeWinForm
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.uiPanel4 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel2 = new Sunny.UI.UITableLayoutPanel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.uiLabel3 = new Sunny.UI.UILabel();
-            this.uiPanel1 = new Sunny.UI.UIPanel();
-            this.uiPanelLoginMsg = new Sunny.UI.UIPanel();
-            this.uiPanel3 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel3 = new Sunny.UI.UITableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.uiTextBoxCode = new Sunny.UI.UITextBox();
+            this.uiPanel1 = new Sunny.UI.UIPanel();
+            this.uiPanelLoginMsg = new Sunny.UI.UIPanel();
+            this.uiPanel3 = new Sunny.UI.UIPanel();
             this.uiTableLayoutPanel1.SuspendLayout();
             this.uiPanel4.SuspendLayout();
             this.uiTableLayoutPanel2.SuspendLayout();
-            this.uiPanel3.SuspendLayout();
             this.uiTableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.uiPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiButton1
@@ -60,10 +61,10 @@ namespace WodeWinForm
             this.uiButton1.FillColor = System.Drawing.Color.Navy;
             this.uiButton1.FillHoverColor = System.Drawing.Color.Crimson;
             this.uiButton1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.Location = new System.Drawing.Point(138, 3);
+            this.uiButton1.Location = new System.Drawing.Point(151, 3);
             this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton1.Name = "uiButton1";
-            this.uiButton1.Size = new System.Drawing.Size(129, 94);
+            this.uiButton1.Size = new System.Drawing.Size(142, 103);
             this.uiButton1.TabIndex = 0;
             this.uiButton1.Text = "Login";
             this.uiButton1.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -76,10 +77,10 @@ namespace WodeWinForm
             this.uiButton2.FillColor = System.Drawing.Color.Maroon;
             this.uiButton2.FillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.uiButton2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton2.Location = new System.Drawing.Point(273, 3);
+            this.uiButton2.Location = new System.Drawing.Point(299, 3);
             this.uiButton2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton2.Name = "uiButton2";
-            this.uiButton2.Size = new System.Drawing.Size(129, 94);
+            this.uiButton2.Size = new System.Drawing.Size(142, 103);
             this.uiButton2.TabIndex = 1;
             this.uiButton2.Text = "Cancel";
             this.uiButton2.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -92,7 +93,7 @@ namespace WodeWinForm
             this.uiLabel2.ForeColor = System.Drawing.Color.Maroon;
             this.uiLabel2.Location = new System.Drawing.Point(3, 50);
             this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(158, 50);
+            this.uiLabel2.Size = new System.Drawing.Size(173, 50);
             this.uiLabel2.TabIndex = 3;
             this.uiLabel2.Text = "PassWord";
             this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -103,34 +104,36 @@ namespace WodeWinForm
             this.uiTextBoxUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.uiTextBoxUserName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTextBoxUserName.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTextBoxUserName.Location = new System.Drawing.Point(168, 5);
+            this.uiTextBoxUserName.Location = new System.Drawing.Point(183, 5);
             this.uiTextBoxUserName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBoxUserName.MinimumSize = new System.Drawing.Size(1, 16);
             this.uiTextBoxUserName.Name = "uiTextBoxUserName";
             this.uiTextBoxUserName.Padding = new System.Windows.Forms.Padding(5);
             this.uiTextBoxUserName.ShowText = false;
-            this.uiTextBoxUserName.Size = new System.Drawing.Size(378, 40);
-            this.uiTextBoxUserName.TabIndex = 4;
+            this.uiTextBoxUserName.Size = new System.Drawing.Size(413, 40);
+            this.uiTextBoxUserName.TabIndex = 1;
             this.uiTextBoxUserName.Text = "uiTextBox1";
             this.uiTextBoxUserName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiTextBoxUserName.Watermark = "";
+            this.uiTextBoxUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.uiTextBoxUserName_KeyDown);
             // 
             // uiTextBoxPassWord
             // 
             this.uiTextBoxPassWord.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.uiTextBoxPassWord.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTextBoxPassWord.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTextBoxPassWord.Location = new System.Drawing.Point(168, 55);
+            this.uiTextBoxPassWord.Location = new System.Drawing.Point(183, 55);
             this.uiTextBoxPassWord.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBoxPassWord.MinimumSize = new System.Drawing.Size(1, 16);
             this.uiTextBoxPassWord.Name = "uiTextBoxPassWord";
             this.uiTextBoxPassWord.Padding = new System.Windows.Forms.Padding(5);
             this.uiTextBoxPassWord.ShowText = false;
-            this.uiTextBoxPassWord.Size = new System.Drawing.Size(378, 40);
-            this.uiTextBoxPassWord.TabIndex = 5;
+            this.uiTextBoxPassWord.Size = new System.Drawing.Size(413, 40);
+            this.uiTextBoxPassWord.TabIndex = 2;
             this.uiTextBoxPassWord.Text = "uiTextBox2";
             this.uiTextBoxPassWord.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiTextBoxPassWord.Watermark = "";
+            this.uiTextBoxPassWord.KeyDown += new System.Windows.Forms.KeyEventHandler(this.uiTextBoxPassWord_KeyDown);
             // 
             // uiTableLayoutPanel1
             // 
@@ -154,7 +157,7 @@ namespace WodeWinForm
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.uiTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(550, 260);
+            this.uiTableLayoutPanel1.Size = new System.Drawing.Size(600, 269);
             this.uiTableLayoutPanel1.TabIndex = 6;
             this.uiTableLayoutPanel1.TagString = null;
             // 
@@ -165,7 +168,7 @@ namespace WodeWinForm
             this.uiLabel1.ForeColor = System.Drawing.Color.Maroon;
             this.uiLabel1.Location = new System.Drawing.Point(3, 0);
             this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(158, 50);
+            this.uiLabel1.Size = new System.Drawing.Size(173, 50);
             this.uiLabel1.TabIndex = 6;
             this.uiLabel1.Text = "UserName";
             this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -180,7 +183,7 @@ namespace WodeWinForm
             this.uiPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel4.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel4.Name = "uiPanel4";
-            this.uiPanel4.Size = new System.Drawing.Size(542, 100);
+            this.uiPanel4.Size = new System.Drawing.Size(592, 109);
             this.uiPanel4.TabIndex = 7;
             this.uiPanel4.Text = "uiPanel4";
             this.uiPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -194,14 +197,28 @@ namespace WodeWinForm
             this.uiTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.uiTableLayoutPanel2.Controls.Add(this.uiButton2, 2, 0);
             this.uiTableLayoutPanel2.Controls.Add(this.uiButton1, 1, 0);
+            this.uiTableLayoutPanel2.Controls.Add(this.checkBox1, 3, 0);
             this.uiTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.uiTableLayoutPanel2.Name = "uiTableLayoutPanel2";
             this.uiTableLayoutPanel2.RowCount = 1;
             this.uiTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(542, 100);
+            this.uiTableLayoutPanel2.Size = new System.Drawing.Size(592, 109);
             this.uiTableLayoutPanel2.TabIndex = 0;
             this.uiTableLayoutPanel2.TagString = null;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.checkBox1.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox1.ForeColor = System.Drawing.Color.Indigo;
+            this.checkBox1.Location = new System.Drawing.Point(447, 85);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(142, 21);
+            this.checkBox1.TabIndex = 2;
+            this.checkBox1.Text = "remember me";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // uiLabel3
             // 
@@ -210,10 +227,54 @@ namespace WodeWinForm
             this.uiLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.uiLabel3.Location = new System.Drawing.Point(3, 100);
             this.uiLabel3.Name = "uiLabel3";
-            this.uiLabel3.Size = new System.Drawing.Size(158, 50);
+            this.uiLabel3.Size = new System.Drawing.Size(173, 50);
             this.uiLabel3.TabIndex = 8;
             this.uiLabel3.Text = "验证码";
             this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uiTableLayoutPanel3
+            // 
+            this.uiTableLayoutPanel3.ColumnCount = 2;
+            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel3.Controls.Add(this.pictureBox1, 0, 0);
+            this.uiTableLayoutPanel3.Controls.Add(this.uiTextBoxCode, 1, 0);
+            this.uiTableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTableLayoutPanel3.Location = new System.Drawing.Point(182, 103);
+            this.uiTableLayoutPanel3.Name = "uiTableLayoutPanel3";
+            this.uiTableLayoutPanel3.RowCount = 1;
+            this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(415, 44);
+            this.uiTableLayoutPanel3.TabIndex = 9;
+            this.uiTableLayoutPanel3.TagString = null;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(201, 38);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // uiTextBoxCode
+            // 
+            this.uiTextBoxCode.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBoxCode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uiTextBoxCode.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiTextBoxCode.Location = new System.Drawing.Point(211, 5);
+            this.uiTextBoxCode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBoxCode.MinimumSize = new System.Drawing.Size(1, 16);
+            this.uiTextBoxCode.Name = "uiTextBoxCode";
+            this.uiTextBoxCode.Padding = new System.Windows.Forms.Padding(5);
+            this.uiTextBoxCode.ShowText = false;
+            this.uiTextBoxCode.Size = new System.Drawing.Size(200, 34);
+            this.uiTextBoxCode.TabIndex = 3;
+            this.uiTextBoxCode.Text = "uiTextBox1";
+            this.uiTextBoxCode.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.uiTextBoxCode.Watermark = "";
+            this.uiTextBoxCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.uiTextBoxCode_KeyDown);
             // 
             // uiPanel1
             // 
@@ -223,7 +284,7 @@ namespace WodeWinForm
             this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel1.Name = "uiPanel1";
-            this.uiPanel1.Size = new System.Drawing.Size(550, 125);
+            this.uiPanel1.Size = new System.Drawing.Size(600, 125);
             this.uiPanel1.TabIndex = 7;
             this.uiPanel1.Text = "图片展示区域";
             this.uiPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -232,11 +293,11 @@ namespace WodeWinForm
             // 
             this.uiPanelLoginMsg.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.uiPanelLoginMsg.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiPanelLoginMsg.Location = new System.Drawing.Point(0, 385);
+            this.uiPanelLoginMsg.Location = new System.Drawing.Point(0, 394);
             this.uiPanelLoginMsg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanelLoginMsg.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanelLoginMsg.Name = "uiPanelLoginMsg";
-            this.uiPanelLoginMsg.Size = new System.Drawing.Size(550, 56);
+            this.uiPanelLoginMsg.Size = new System.Drawing.Size(600, 56);
             this.uiPanelLoginMsg.TabIndex = 8;
             this.uiPanelLoginMsg.Text = "登录消息展示区域";
             this.uiPanelLoginMsg.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -250,59 +311,16 @@ namespace WodeWinForm
             this.uiPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiPanel3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiPanel3.Name = "uiPanel3";
-            this.uiPanel3.Size = new System.Drawing.Size(550, 260);
+            this.uiPanel3.Size = new System.Drawing.Size(600, 269);
             this.uiPanel3.TabIndex = 9;
             this.uiPanel3.Text = "uiPanel3";
             this.uiPanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // uiTableLayoutPanel3
-            // 
-            this.uiTableLayoutPanel3.ColumnCount = 2;
-            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel3.Controls.Add(this.pictureBox1, 0, 0);
-            this.uiTableLayoutPanel3.Controls.Add(this.uiTextBoxCode, 1, 0);
-            this.uiTableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTableLayoutPanel3.Location = new System.Drawing.Point(167, 103);
-            this.uiTableLayoutPanel3.Name = "uiTableLayoutPanel3";
-            this.uiTableLayoutPanel3.RowCount = 1;
-            this.uiTableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.uiTableLayoutPanel3.Size = new System.Drawing.Size(380, 44);
-            this.uiTableLayoutPanel3.TabIndex = 9;
-            this.uiTableLayoutPanel3.TagString = null;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(184, 38);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // uiTextBoxCode
-            // 
-            this.uiTextBoxCode.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.uiTextBoxCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uiTextBoxCode.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTextBoxCode.Location = new System.Drawing.Point(194, 5);
-            this.uiTextBoxCode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTextBoxCode.MinimumSize = new System.Drawing.Size(1, 16);
-            this.uiTextBoxCode.Name = "uiTextBoxCode";
-            this.uiTextBoxCode.Padding = new System.Windows.Forms.Padding(5);
-            this.uiTextBoxCode.ShowText = false;
-            this.uiTextBoxCode.Size = new System.Drawing.Size(182, 34);
-            this.uiTextBoxCode.TabIndex = 1;
-            this.uiTextBoxCode.Text = "uiTextBox1";
-            this.uiTextBoxCode.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.uiTextBoxCode.Watermark = "";
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 441);
+            this.ClientSize = new System.Drawing.Size(600, 450);
             this.Controls.Add(this.uiPanel3);
             this.Controls.Add(this.uiPanel1);
             this.Controls.Add(this.uiPanelLoginMsg);
@@ -314,9 +332,10 @@ namespace WodeWinForm
             this.uiTableLayoutPanel1.ResumeLayout(false);
             this.uiPanel4.ResumeLayout(false);
             this.uiTableLayoutPanel2.ResumeLayout(false);
-            this.uiPanel3.ResumeLayout(false);
+            this.uiTableLayoutPanel2.PerformLayout();
             this.uiTableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.uiPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -339,5 +358,6 @@ namespace WodeWinForm
         private Sunny.UI.UITableLayoutPanel uiTableLayoutPanel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Sunny.UI.UITextBox uiTextBoxCode;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
