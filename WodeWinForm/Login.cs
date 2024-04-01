@@ -38,7 +38,7 @@ namespace WodeWinForm
                 return;
             }
             string u = uiTextBoxUserName.Text.Trim();
-            string p = uiTextBoxUserName.Text.Trim();
+            string p = uiTextBoxPassWord.Text.Trim();
             if(u == "" || p == "")
             {
                 uiPanelLoginMsg.Text = "账号或密码不能为空";
@@ -165,7 +165,8 @@ namespace WodeWinForm
                 string fnt = font[rnd.Next(font.Length)];
                 Font ft = new Font(fnt, 28);
                 Color clr = color[rnd.Next(color.Length)];
-                g.DrawString(txt[i].ToString(), ft, new SolidBrush(clr), (float)i * 18, (float)0);
+                //g.DrawString(txt[i].ToString(), ft, new SolidBrush(clr), (float)i * 18, (float)0);
+                g.DrawString(txt[i].ToString(), ft, new SolidBrush(clr), (float)i * 30, (float)0);
             }
             pictureBox1.Image = bmp;
 
@@ -305,6 +306,7 @@ namespace WodeWinForm
 
         private void uiTextBoxCode_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode != Keys.Enter) return;
             uiButton1_Click(null, null);
         }
     }

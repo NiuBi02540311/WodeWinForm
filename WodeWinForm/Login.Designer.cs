@@ -113,7 +113,7 @@ namespace WodeWinForm
             this.uiTextBoxUserName.Size = new System.Drawing.Size(413, 40);
             this.uiTextBoxUserName.TabIndex = 1;
             this.uiTextBoxUserName.Text = "uiTextBox1";
-            this.uiTextBoxUserName.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTextBoxUserName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiTextBoxUserName.Watermark = "";
             this.uiTextBoxUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.uiTextBoxUserName_KeyDown);
             // 
@@ -131,7 +131,7 @@ namespace WodeWinForm
             this.uiTextBoxPassWord.Size = new System.Drawing.Size(413, 40);
             this.uiTextBoxPassWord.TabIndex = 2;
             this.uiTextBoxPassWord.Text = "uiTextBox2";
-            this.uiTextBoxPassWord.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTextBoxPassWord.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.uiTextBoxPassWord.Watermark = "";
             this.uiTextBoxPassWord.KeyDown += new System.Windows.Forms.KeyEventHandler(this.uiTextBoxPassWord_KeyDown);
             // 
