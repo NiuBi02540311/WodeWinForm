@@ -61,9 +61,10 @@ namespace WodeWinForm
             SaveConfig(true);
             LoadPng();
             LoadContextMenuStrip();
-            
-
-    }
+            //this.menuStrip1.BackColor = GlobalConfig.BackColor2;
+            //this.statusStrip2.BackColor = GlobalConfig.BackColor2;
+            //this.BackColor = GlobalConfig.BackColor2;
+        }
 
         private DataTable GetMenuData()
         {

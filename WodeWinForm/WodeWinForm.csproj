@@ -130,30 +130,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Lib\Gartoon-Team-Gartoon-Action-Go-bottom.16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Lib\Gartoon-Team-Gartoon-Action-Go-bottom.128.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Lib\Gartoon-Team-Gartoon-Action-Go-jump.128.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Lib\Gartoon-Team-Gartoon-Action-Go-last.128.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Lib\Gartoon-Team-Gartoon-Action-Tool-tweak.128.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Lib\Gartoon-Team-Gartoon-Action-Go-jump.16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Lib\Gartoon-Team-Gartoon-Action-Go-last.16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Lib\Gartoon-Team-Gartoon-Action-Tool-tweak.16.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Lib\1\Graphicloads-Colorful-Long-Shadow-Search.24.png" />
   </ItemGroup>
   <ItemGroup>

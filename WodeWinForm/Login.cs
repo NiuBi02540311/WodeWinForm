@@ -35,7 +35,7 @@ namespace WodeWinForm
             {
                 uiPanelLoginMsg.Text = "验证码不正确，请检查！";
                 uiPanelLoginMsg.ForeColor = Color.Red;
-                return;
+               // return;
             }
             string u = uiTextBoxUserName.Text.Trim();
             string p = uiTextBoxPassWord.Text.Trim();
