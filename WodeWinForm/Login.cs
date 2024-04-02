@@ -24,10 +24,19 @@ namespace WodeWinForm
         }
         private void Login_Load(object sender, EventArgs e)
         {
-            uiTextBoxUserName.Focus();
+           
             pictureBox1_Click(null, null);
             xmluiTextBoxUserName = Tool.XmlHelper.Getchild("uiTextBoxUserName");
             uiTextBoxUserName.Text = xmluiTextBoxUserName;
+            if(uiTextBoxUserName.Text == "")
+            {
+                uiTextBoxUserName.Focus();
+            }
+            else
+            {
+                uiTextBoxPassWord.Focus();
+            }
+           
         }
         private async void uiButton1_Click(object sender, EventArgs e)
         {

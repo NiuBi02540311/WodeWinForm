@@ -44,7 +44,7 @@ namespace WodeWinForm
 
             //this.BackColor = GlobalConfig.BackColor;
             this.Resize += ParentForm_Resize;
-            this.Load += ParentForm_Load; //treeView1_NodeMouseDoubleClick
+            this.Load += Index_Load; //treeView1_NodeMouseDoubleClick
             treeViewMenu.NodeMouseDoubleClick += treeView1_NodeMouseDoubleClick;
             //treeViewMenu.BackColor = GlobalConfig.BackColor;
             
@@ -56,11 +56,15 @@ namespace WodeWinForm
             this.toolStripStatusLabel1.Text = $"本机IP地址:{GlobalConfig.LocalHostIP}   登录时间:{DateTime.Now}";
         }
 
-        private void Form_Alert_Load(object sender, EventArgs e)
+        private void Index_Load(object sender, EventArgs e)
         {
             SaveConfig(true);
             LoadPng();
             LoadContextMenuStrip();
+
+            //LoadMenuNodes();
+            frmTree_Load();
+
             //this.menuStrip1.BackColor = GlobalConfig.BackColor2;
             //this.statusStrip2.BackColor = GlobalConfig.BackColor2;
             //this.BackColor = GlobalConfig.BackColor2;
@@ -80,11 +84,11 @@ namespace WodeWinForm
             ErrorData.Rows.Add("-1", "0", "Root");
             ErrorData.Rows.Add("1", "-1", "学生管理");
             ErrorData.Rows.Add("2", "-1", "教师管理");
-            ErrorData.Rows.Add("3", "1", "学生信息录入", "WodeWinForm", "WodeWinForm.View.Form1");
-            ErrorData.Rows.Add("4", "2", "教师信息录入", "WodeWinForm", "WodeWinForm.View.Form2");
+            ErrorData.Rows.Add("3", "1", "学生信息录入Form1", "WodeWinForm", "WodeWinForm.View.Form1");
+            ErrorData.Rows.Add("4", "2", "教师信息录入Form2", "WodeWinForm", "WodeWinForm.View.Form2");
             for (int i= 5; i < 16; i++)
             {
-                ErrorData.Rows.Add(i, i % 2 == 0 ? 1:2, "教师信息录入"+i, "WodeWinForm", "WodeWinForm.View.Form2");
+               // ErrorData.Rows.Add(i, i % 2 == 0 ? 1:2, "教师信息录入"+i, "WodeWinForm", "WodeWinForm.View.Form2");
             }
            
             return ErrorData;
@@ -504,7 +508,9 @@ namespace WodeWinForm
             AddTree(i, (TreeNode)null, NewTable);
             treeViewMenu.HideSelection = true;
             treeViewMenu.ShowLines = true;
-        }
+            treeViewMenu.ExpandAll();
+
+    }
 
 
         //第二部分功能-文件夹图标变换：
