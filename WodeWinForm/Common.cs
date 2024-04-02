@@ -2,17 +2,61 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace WodeWinForm
 {
-   public class Common
+   public class common
    {
-   }
+        public static string AssemblyFileVersion()
+        {
+            object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyFileVersionAttribute), false);
+            if (attributes.Length == 0)
+            {
+                return "";
+            }
+            else
+            {
+                return ((AssemblyFileVersionAttribute)attributes[0]).Version;
+            }
+        }
+        //方法二
+        //得到指定程序集版本
+        private static string GetAssemblyVersion(string name)
+        {
+            byte[] filedata = File.ReadAllBytes(name + ".exe");
+            return Assembly.Load(filedata).GetName().Version.ToString();
+
+        }
+
+        /// <summary>
+        /// 启动一个软件，并传入参数
+        /// </summary>
+        /// <param name="runFilePath"></param>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public static bool StartProcess(string runFilePath, params string[] args)
+        {
+            string s = "";
+            foreach (string arg in args)
+            {
+                s = s + arg + " ";
+            }
+            s = s.Trim();
+            Process process = new Process();//创建进程对象    
+            ProcessStartInfo startInfo = new ProcessStartInfo(runFilePath, s); // 括号里是(程序名,参数)
+            process.StartInfo = startInfo;
+            process.Start();
+            return true;
+        }
+ 
+    }
    public class DBHelper
     {
         public static string connstr = "server=.;database=V_Char;uid=sa;pwd=000000";

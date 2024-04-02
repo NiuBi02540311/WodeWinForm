@@ -16,6 +16,7 @@ namespace WodeWinForm.View
 {
     public partial class Form2 : Form
     {
+        // this is from  https://blog.csdn.net/qq_38693757/article/details/125252813
         public Form2()
         {
             InitializeComponent();
@@ -73,7 +74,7 @@ namespace WodeWinForm.View
             LocalFileBlacklist.Add("Newtonsoft.Json.dll");
             LocalFileBlacklist.Add("Newtonsoft.Json.xml");
 
-
+              
             //string localVersionPath = FileVersionInfo.GetVersionInfo(Path + "\\Test1.exe").FileVersion;
             string localVersionPath = "1.23";
             Console.WriteLine("软件的版本号" + localVersionPath);

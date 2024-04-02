@@ -53,7 +53,8 @@ namespace WodeWinForm
             //this.fullTabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             //this.fullTabControl1.DrawItem += tabControlLeft_DrawItem;
             this.statusStrip2.BackColor = GlobalConfig.BackColor;
-            this.toolStripStatusLabel1.Text = $"本机IP地址:{GlobalConfig.LocalHostIP}   登录时间:{DateTime.Now}";
+
+            this.toolStripStatusLabel1.Text = $@"本机IP地址:{GlobalConfig.LocalHostIP}   登录时间:{DateTime.Now}   版本号:{common.AssemblyFileVersion()}";
         }
 
         private void Index_Load(object sender, EventArgs e)
@@ -83,9 +84,10 @@ namespace WodeWinForm
 
             ErrorData.Rows.Add("-1", "0", "Root");
             ErrorData.Rows.Add("1", "-1", "学生管理");
-            ErrorData.Rows.Add("2", "-1", "教师管理");
+            ErrorData.Rows.Add("2", "-1", "实例管理");
             ErrorData.Rows.Add("3", "1", "学生信息录入Form1", "WodeWinForm", "WodeWinForm.View.Form1");
-            ErrorData.Rows.Add("4", "2", "教师信息录入Form2", "WodeWinForm", "WodeWinForm.View.Form2");
+            ErrorData.Rows.Add("4", "2", "自动更新实例1", "WodeWinForm", "WodeWinForm.View.Form2");
+            ErrorData.Rows.Add("5", "2", "自动更新实例2", "WodeWinForm", "WodeWinForm.View.Form3");
             for (int i= 5; i < 16; i++)
             {
                // ErrorData.Rows.Add(i, i % 2 == 0 ? 1:2, "教师信息录入"+i, "WodeWinForm", "WodeWinForm.View.Form2");
