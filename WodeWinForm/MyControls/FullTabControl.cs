@@ -172,37 +172,49 @@ namespace WodeWinForm.MyControls
                 //}
                 //画关闭符号
                 float w = 2F;
-                using (Pen objpen = new Pen(Color.Red, w))
+                var X = e.Index == this.SelectedIndex ? red : blue;
+                //using (Pen objpen = new Pen(Color.Red, w))
+                if (e.State == DrawItemState.Selected)
                 {
-                    ////=============================================
-                    //自己画X
-                    //"\"线
-                    Point p1 = new Point(tab.X + 3, tab.Y + 3);
-                    Point p2 = new Point(tab.X + tab.Width - 3, tab.Y + tab.Height - 3);
-                    e.Graphics.DrawLine(objpen, p1, p2);
-                    //"/"线
-                    Point p3 = new Point(tab.X + 3, tab.Y + tab.Height - 3);
-                    Point p4 = new Point(tab.X + tab.Width - 3, tab.Y + 3);
-                    e.Graphics.DrawLine(objpen, p3, p4);
+                    #region 关闭按钮
+                    using (Pen objpen = new Pen(X, w))
+                    {
+                        ////=============================================
+                        //自己画X
+                        //"\"线
+                        Point p1 = new Point(tab.X + 3, tab.Y + 3);
+                        Point p2 = new Point(tab.X + tab.Width - 3, tab.Y + tab.Height - 3);
+                        e.Graphics.DrawLine(objpen, p1, p2);
+                        //"/"线
+                        Point p3 = new Point(tab.X + 3, tab.Y + tab.Height - 3);
+                        Point p4 = new Point(tab.X + tab.Width - 3, tab.Y + 3);
+                        e.Graphics.DrawLine(objpen, p3, p4);
 
-                    ////=============================================
-                    //使用图片
-                    //Bitmap bt = new Bitmap(image);
-                    //Point p5 = new Point(tab.X, 4);
-                    //e.Graphics.DrawImage(bt, p5);
+                        ////=============================================
+                        //使用图片
+                        //Bitmap bt = new Bitmap(image);
+                        //Point p5 = new Point(tab.X, 4);
+                        //e.Graphics.DrawImage(bt, p5);
 
-                    ////设置文字对齐方式
-                    //StringFormat StringF = new StringFormat();
-                    //StringF.Alignment = StringAlignment.Center;
-                    //StringF.LineAlignment = StringAlignment.Center;
-                    //var ziti = new Font("宋体", 12);
+                        ////设置文字对齐方式
+                        //StringFormat StringF = new StringFormat();
+                        //StringF.Alignment = StringAlignment.Center;
+                        //StringF.LineAlignment = StringAlignment.Center;
+                        //var ziti = new Font("宋体", 12);
 
-                    //e.Graphics.DrawString(this.TabPages[e.Index].Text, ziti, objpen.Brush, tab, StringF);
-                }
-                e.Graphics.Dispose();
+                        //e.Graphics.DrawString(this.TabPages[e.Index].Text, ziti, objpen.Brush, tab, StringF);
+                    }
+                    #endregion
+                }
+              
+                //e.Graphics.Dispose();
             }
             catch (Exception)
             { }
+            finally
+            {
+                e.Graphics.Dispose();
+            }
         }
 
         private void KDelTabControl_MouseDown(object sender, MouseEventArgs e)

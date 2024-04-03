@@ -111,6 +111,8 @@ namespace WodeWinForm
             this.uiTextBoxUserName.Padding = new System.Windows.Forms.Padding(5);
             this.uiTextBoxUserName.ShowText = false;
             this.uiTextBoxUserName.Size = new System.Drawing.Size(413, 40);
+            this.uiTextBoxUserName.Symbol = 362470;
+            this.uiTextBoxUserName.SymbolColor = System.Drawing.Color.DarkGreen;
             this.uiTextBoxUserName.TabIndex = 1;
             this.uiTextBoxUserName.Text = "uiTextBox1";
             this.uiTextBoxUserName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -129,6 +131,8 @@ namespace WodeWinForm
             this.uiTextBoxPassWord.Padding = new System.Windows.Forms.Padding(5);
             this.uiTextBoxPassWord.ShowText = false;
             this.uiTextBoxPassWord.Size = new System.Drawing.Size(413, 40);
+            this.uiTextBoxPassWord.Symbol = 560267;
+            this.uiTextBoxPassWord.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.uiTextBoxPassWord.TabIndex = 2;
             this.uiTextBoxPassWord.Text = "uiTextBox2";
             this.uiTextBoxPassWord.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;

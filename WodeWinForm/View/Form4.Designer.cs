@@ -34,6 +34,7 @@ namespace WodeWinForm.View
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.uiTextBox1 = new Sunny.UI.UITextBox();
             this.dataWindow1 = new WodeWinForm.MyControls.ComboBoxGridView();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +85,25 @@ namespace WodeWinForm.View
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // uiTextBox1
+            // 
+            this.uiTextBox1.BackgroundImage = global::WodeWinForm.Properties.Resources.Ampeross_Qetto_2_Search_24;
+            this.uiTextBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiTextBox1.Location = new System.Drawing.Point(87, 385);
+            this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 16);
+            this.uiTextBox1.Name = "uiTextBox1";
+            this.uiTextBox1.Padding = new System.Windows.Forms.Padding(5);
+            this.uiTextBox1.ShowText = false;
+            this.uiTextBox1.Size = new System.Drawing.Size(408, 29);
+            this.uiTextBox1.Symbol = 61447;
+            this.uiTextBox1.TabIndex = 4;
+            this.uiTextBox1.Text = "uiTextBox1";
+            this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTextBox1.Watermark = "";
+            // 
             // dataWindow1
             // 
             this.dataWindow1.FormattingEnabled = true;
@@ -106,6 +126,7 @@ namespace WodeWinForm.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.uiTextBox1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
@@ -126,5 +147,6 @@ namespace WodeWinForm.View
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private Sunny.UI.UITextBox uiTextBox1;
     }
 }

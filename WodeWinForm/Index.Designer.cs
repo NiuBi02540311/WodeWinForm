@@ -240,7 +240,7 @@
             this.fullTabControl1.Location = new System.Drawing.Point(237, 30);
             this.fullTabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.fullTabControl1.Name = "fullTabControl1";
-            this.fullTabControl1.Padding = new System.Drawing.Point(15, 30);
+            this.fullTabControl1.Padding = new System.Drawing.Point(15, 25);
             this.fullTabControl1.SelectedIndex = 0;
             this.fullTabControl1.Size = new System.Drawing.Size(584, 532);
             this.fullTabControl1.TabIndex = 5;
