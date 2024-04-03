@@ -35,18 +35,19 @@ namespace WodeWinForm.View
             this.uiProcessBar1 = new Sunny.UI.UIProcessBar();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.comboBoxGridView1 = new WodeWinForm.MyControls.ComboBoxGridView();
             this.SuspendLayout();
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(121, 143);
+            this.progressBar1.Location = new System.Drawing.Point(52, 90);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(572, 23);
             this.progressBar1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(132, 89);
+            this.button1.Location = new System.Drawing.Point(63, 36);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -56,7 +57,7 @@ namespace WodeWinForm.View
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(311, 88);
+            this.button2.Location = new System.Drawing.Point(242, 35);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
@@ -68,7 +69,7 @@ namespace WodeWinForm.View
             // 
             this.uiProcessBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.uiProcessBar1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiProcessBar1.Location = new System.Drawing.Point(121, 225);
+            this.uiProcessBar1.Location = new System.Drawing.Point(52, 172);
             this.uiProcessBar1.MinimumSize = new System.Drawing.Size(70, 3);
             this.uiProcessBar1.Name = "uiProcessBar1";
             this.uiProcessBar1.Size = new System.Drawing.Size(569, 29);
@@ -78,7 +79,7 @@ namespace WodeWinForm.View
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(121, 190);
+            this.label1.Location = new System.Drawing.Point(52, 137);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 15);
             this.label1.TabIndex = 4;
@@ -86,7 +87,7 @@ namespace WodeWinForm.View
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(203, 186);
+            this.button3.Location = new System.Drawing.Point(134, 133);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 5;
@@ -94,11 +95,29 @@ namespace WodeWinForm.View
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // comboBoxGridView1
+            // 
+            this.comboBoxGridView1.FormattingEnabled = true;
+            this.comboBoxGridView1.Location = new System.Drawing.Point(52, 227);
+            this.comboBoxGridView1.Name = "comboBoxGridView1";
+            this.comboBoxGridView1.NullValue = "";
+            this.comboBoxGridView1.PopupGridAutoSize = false;
+            this.comboBoxGridView1.RowFilterVisible = false;
+            this.comboBoxGridView1.sDisplayField = "";
+            this.comboBoxGridView1.sDisplayMember = "";
+            this.comboBoxGridView1.SeparatorChar = "|";
+            this.comboBoxGridView1.Size = new System.Drawing.Size(121, 23);
+            this.comboBoxGridView1.sKeyWords = "";
+            this.comboBoxGridView1.sValueMember = "";
+            this.comboBoxGridView1.TabIndex = 6;
+            this.comboBoxGridView1.Value = "";
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBoxGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.uiProcessBar1);
@@ -120,5 +139,6 @@ namespace WodeWinForm.View
         private Sunny.UI.UIProcessBar uiProcessBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
+        private MyControls.ComboBoxGridView comboBoxGridView1;
     }
 }

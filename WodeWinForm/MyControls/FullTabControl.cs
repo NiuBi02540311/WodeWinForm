@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WodeWinForm.Properties;
-using static System.Windows.Forms.Menu;
 
 namespace WodeWinForm.MyControls
 {
@@ -20,26 +15,6 @@ namespace WodeWinForm.MyControls
 
 
         }
-        //protected virtual void DrawTitle(Graphics g)
-        //{
-        //    Image imgButton = null;//OcvMana.Properties.Resources.button;
-
-        //    StringFormat sf = new StringFormat();
-        //    sf.Alignment = StringAlignment.Center;
-        //    sf.LineAlignment = StringAlignment.Center;
-        //    Font font = new System.Drawing.Font("微软雅黑", 10F, FontStyle.Bold);//设置标签字体样式
-        //    using (SolidBrush sb = new SolidBrush(Color.FromArgb(127, 0, 0, 0)))
-        //    {
-        //        for (int i = 0; i < this.TabPages.Count; i++)
-        //        {
-        //            Rectangle rect = this.GetTabRect(i);
-        //            Rectangle newRect = new Rectangle(rect.Left + 7, rect.Top, rect.Width - 7, rect.Height);
-
-        //            g.DrawImage(imgButton, newRect);
-        //            g.DrawString(this.TabPages[i].Text, font, Brushes.White, rect, sf);
-        //        }
-        //    }
-        //}
 
         public override Rectangle DisplayRectangle
         {
@@ -71,11 +46,11 @@ namespace WodeWinForm.MyControls
         //tabPage标签图片
         //Bitmap image = new Bitmap(@"C:\Users\admin\Desktop\下载 (1).jpg");
 
-        private MenuItemCollection menuItemCollection;
+        //private MenuItemCollection menuItemCollection;
         public FullTabControl()
         {
-            //httpss://www.cnblogs.com/fangjb/p/15786779.html
-            //InitializeComponent();
+            //https://www.cnblogs.com/fangjb/p/15786779.html
+            //InitializeComponent();
 
             //this.SetStyle(ControlStyles.UserPaint, true);//用户自己绘制
             //this.SetStyle(ControlStyles.ResizeRedraw, true);
@@ -84,15 +59,19 @@ namespace WodeWinForm.MyControls
             ////让控件支持透明色
             //this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             //this.UpdateStyles();
- 
 
+            //将TabControl的SizeMode属性设为Fixed
+            //设置ItemSize的大小(width)
+
+            //this.SizeMode = TabSizeMode.Fixed;
             // 设置TabControl的标签高度
-            this.ItemSize = new Size(0, 40); // 宽度设置为0，自动计算；高度设置为100像素
-            this.ItemSize = new Size(0, 30);
+            //this.ItemSize = new Size(0, 40); // 宽度设置为0，自动计算；高度设置为100像素
+             // this.ItemSize = new Size(0, 30);
             // 设置TabControl的标签与边缘的间距
             //tabControl.Padding = new Padding(10); // 默认情况下，高度不受Padding影响，但可以调整左右间距
 
-            this.Padding = new Point(12, 3);
+             //this.Padding = new Point(12, 3);
+             //this.Padding = new System.Drawing.Point(30, 60);
 
             //DrawMode:指定用户还是系统来绘制标题
             this.DrawMode = TabDrawMode.OwnerDrawFixed;
@@ -109,7 +88,8 @@ namespace WodeWinForm.MyControls
         SolidBrush blue = new SolidBrush(Color.Blue);             //蓝色
         SolidBrush black = new SolidBrush(Color.Black);            //黑色
         SolidBrush Azure = new SolidBrush(Color.Azure);
-        
+
+         
         //绘制“Ｘ”号即关闭按钮
         private void KDelTabControl_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -146,18 +126,23 @@ namespace WodeWinForm.MyControls
                 }
                 StringFormat StringF = new StringFormat();
                 StringF.Alignment = StringAlignment.Near;
-                //StringF.LineAlignment = StringAlignment.Center;
+                //StringF.LineAlignment = StringAlignment.Far;
                 var ziti = new Font("黑体", 10);
                 //ziti = new Font("微软雅黑", 10);
-                ziti = e.State == DrawItemState.Selected ? new Font("微软雅黑", 13, FontStyle.Bold, GraphicsUnit.Pixel) : new Font("微软雅黑", 13, GraphicsUnit.Pixel);
-                Rectangle tab = this.GetTabRect(e.Index);
+                ziti = e.State == DrawItemState.Selected ? new Font("微软雅黑", 11.3F, FontStyle.Bold, GraphicsUnit.Pixel) : new Font("微软雅黑", 11.3F, GraphicsUnit.Pixel);
+                ziti = e.State == DrawItemState.Selected ? new Font("微软雅黑", 11.5F, FontStyle.Bold, GraphicsUnit.Pixel) : new Font("微软雅黑", 11.5F, GraphicsUnit.Pixel);
+                ziti = e.State == DrawItemState.Selected ? new Font("微软雅黑", 12, FontStyle.Bold, GraphicsUnit.Pixel) : new Font("微软雅黑", 12, GraphicsUnit.Pixel);
+                //ziti = e.State == DrawItemState.Selected ? new Font("宋体", 12, FontStyle.Bold, GraphicsUnit.Pixel) : new Font("宋体", 12, GraphicsUnit.Pixel);
 
-                //先添加TabPage属性  
-                //e.Graphics.DrawString(this.TabPages[e.Index].Text, this.Font, SystemBrushes.ControlText, tab.X + 2, tab.Y + 2);
-                //e.Graphics.DrawString(this.TabPages[e.Index].Text, this.Font, blue, tab.X + 2, tab.Y + 2);
-                var yanse = e.Index == this.SelectedIndex ? blue : black;
+                Rectangle tab = this.GetTabRect(e.Index);
+                var yanse = e.Index == this.SelectedIndex ? blue : black;
+                //先添加TabPage属性  
+                //e.Graphics.DrawString(this.TabPages[e.Index].Text, this.Font, SystemBrushes.ControlText, tab.X + 2, tab.Y + 2);
+                //e.Graphics.DrawString(this.TabPages[e.Index].Text, ziti, yanse, tab.X + 2, tab.Y + 2);
+
                 //e.Graphics.DrawString(this.TabPages[e.Index].Text, ziti, yanse, tab.X + 1.5F, tab.Y + 20, StringF);
-                e.Graphics.DrawString(this.TabPages[e.Index].Text, ziti, yanse, tab.X + 2, tab.Y + 20, StringF);
+                e.Graphics.DrawString(this.TabPages[e.Index].Text, ziti, yanse, tab.X + 2, tab.Y + 20);
+                //e.Graphics.DrawString(this.TabPages[e.Index].Text, ziti, yanse, tab.X + 2, tab.Y + 20, StringF);
                 //绘制标签背景
                 //e.Graphics.FillRectangle(yellow, tab);
 
@@ -485,6 +470,26 @@ namespace WodeWinForm.MyControls
             #endregion
         }
 
+        //protected virtual void DrawTitle(Graphics g)
+        //{
+        //    Image imgButton = null;//OcvMana.Properties.Resources.button;
+
+        //    StringFormat sf = new StringFormat();
+        //    sf.Alignment = StringAlignment.Center;
+        //    sf.LineAlignment = StringAlignment.Center;
+        //    Font font = new System.Drawing.Font("微软雅黑", 10F, FontStyle.Bold);//设置标签字体样式
+        //    using (SolidBrush sb = new SolidBrush(Color.FromArgb(127, 0, 0, 0)))
+        //    {
+        //        for (int i = 0; i < this.TabPages.Count; i++)
+        //        {
+        //            Rectangle rect = this.GetTabRect(i);
+        //            Rectangle newRect = new Rectangle(rect.Left + 7, rect.Top, rect.Width - 7, rect.Height);
+
+        //            g.DrawImage(imgButton, newRect);
+        //            g.DrawString(this.TabPages[i].Text, font, Brushes.White, rect, sf);
+        //        }
+        //    }
+        //}
 
 
     }

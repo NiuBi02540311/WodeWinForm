@@ -88,6 +88,8 @@ namespace WodeWinForm
             ErrorData.Rows.Add("3", "1", "学生信息录入Form1", "WodeWinForm", "WodeWinForm.View.Form1");
             ErrorData.Rows.Add("4", "2", "自动更新实例1", "WodeWinForm", "WodeWinForm.View.Form2");
             ErrorData.Rows.Add("5", "2", "自动更新实例2", "WodeWinForm", "WodeWinForm.View.Form3");
+            ErrorData.Rows.Add("6", "2", "combox下拉表格", "WodeWinForm", "WodeWinForm.View.Form4");
+            ErrorData.Rows.Add("7", "2", "零一二三四五六七八九十", "WodeWinForm", "WodeWinForm.View.Form4");
             for (int i= 5; i < 16; i++)
             {
                // ErrorData.Rows.Add(i, i % 2 == 0 ? 1:2, "教师信息录入"+i, "WodeWinForm", "WodeWinForm.View.Form2");
@@ -319,6 +321,7 @@ namespace WodeWinForm
                 //MessageBox.Show(mzhj.Text + " - 已打开");
                 return;
             }
+            //mzhj.BackColor = Color.Cyan;
             mzhj.AutoScroll = true;
             mzhj.MdiParent = this;
             TabPage tb = new TabPage();
