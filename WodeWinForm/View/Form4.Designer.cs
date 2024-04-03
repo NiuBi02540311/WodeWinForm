@@ -31,12 +31,12 @@ namespace WodeWinForm.View
         {
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.uiTextBox1 = new Sunny.UI.UITextBox();
             this.dataWindow1 = new WodeWinForm.MyControls.ComboBoxGridView();
-            this.tabControl1.SuspendLayout();
+            this.closeableTabControl1 = new WodeWinForm.MyControls.CloseableTabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.closeableTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -55,43 +55,12 @@ namespace WodeWinForm.View
             this.textBox1.Size = new System.Drawing.Size(345, 25);
             this.textBox1.TabIndex = 2;
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(83, 134);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(430, 228);
-            this.tabControl1.TabIndex = 3;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(422, 199);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(422, 199);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // uiTextBox1
             // 
-            this.uiTextBox1.BackgroundImage = global::WodeWinForm.Properties.Resources.Ampeross_Qetto_2_Search_24;
             this.uiTextBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.uiTextBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTextBox1.Location = new System.Drawing.Point(87, 385);
+            this.uiTextBox1.Location = new System.Drawing.Point(83, 90);
             this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 16);
             this.uiTextBox1.Name = "uiTextBox1";
@@ -121,19 +90,49 @@ namespace WodeWinForm.View
             this.dataWindow1.TabIndex = 0;
             this.dataWindow1.Value = "";
             // 
+            // closeableTabControl1
+            // 
+            this.closeableTabControl1.Controls.Add(this.tabPage1);
+            this.closeableTabControl1.Controls.Add(this.tabPage2);
+            this.closeableTabControl1.Location = new System.Drawing.Point(83, 142);
+            this.closeableTabControl1.Name = "closeableTabControl1";
+            this.closeableTabControl1.SelectedIndex = 0;
+            this.closeableTabControl1.Size = new System.Drawing.Size(630, 296);
+            this.closeableTabControl1.TabIndex = 5;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(622, 267);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(622, 267);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.closeableTabControl1);
             this.Controls.Add(this.uiTextBox1);
-            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataWindow1);
             this.Name = "Form4";
             this.Text = "Form4";
-            this.tabControl1.ResumeLayout(false);
+            this.closeableTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,9 +143,9 @@ namespace WodeWinForm.View
         private MyControls.ComboBoxGridView dataWindow1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TabControl tabControl1;
+        private Sunny.UI.UITextBox uiTextBox1;
+        private MyControls.CloseableTabControl closeableTabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private Sunny.UI.UITextBox uiTextBox1;
     }
 }

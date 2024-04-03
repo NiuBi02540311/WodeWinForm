@@ -16,8 +16,8 @@ namespace WodeWinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Index());
-            //return;
+            Application.Run(new Index());
+            return;
             Login login = new Login();
             DialogResult Result  = login.ShowDialog();
             //if (formLogin.ShowDialog() == DialogResult.OK)

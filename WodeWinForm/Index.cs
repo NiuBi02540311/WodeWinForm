@@ -322,6 +322,7 @@ namespace WodeWinForm
                 return;
             }
             //mzhj.BackColor = Color.Cyan;
+            mzhj.AutoSize = false;
             mzhj.AutoScroll = true;
             mzhj.MdiParent = this;
             TabPage tb = new TabPage();
@@ -337,9 +338,11 @@ namespace WodeWinForm
             this.fullTabControl1.TabPages.Add(tb);
             mzhj.FormBorderStyle = FormBorderStyle.None; //去除原form自带的边框
             mzhj.Dock = DockStyle.Fill; //填充整个tabpage
-            mzhj.Show();
-            fullTabControl1.SelectedTab = fullTabControl1.TabPages[fullTabControl1.TabPages.Count - 1];
-        }
+            mzhj.ControlBox = false;
+            mzhj.Show();
+            //fullTabControl1.SelectedTab = fullTabControl1.TabPages[fullTabControl1.TabPages.Count - 1];
+            fullTabControl1.SelectedTab = tb;
+        }
         private bool ShowChildForm(string sonText)
         {
 
