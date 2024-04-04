@@ -258,7 +258,8 @@ namespace WodeWinForm.MyControls
         private void DrawDataGridView()
         {
             DataGridView dataGridView = new DataGridView();
-            dataGridView.BackgroundColor = SystemColors.ActiveCaptionText;
+            //dataGridView.BackgroundColor = SystemColors.ActiveCaptionText;
+            dataGridView.BackgroundColor = GlobalConfig.BackColor2;
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.ReadOnly = true;
             dataGridView.AllowUserToAddRows = false;

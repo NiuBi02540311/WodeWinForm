@@ -32,16 +32,19 @@ namespace WodeWinForm.View
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.uiTextBox1 = new Sunny.UI.UITextBox();
-            this.dataWindow1 = new WodeWinForm.MyControls.ComboBoxGridView();
-            this.closeableTabControl1 = new WodeWinForm.MyControls.CloseableTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.closeableTabControl1.SuspendLayout();
+            this.uiComboDataGridView1 = new Sunny.UI.UIComboDataGridView();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dataWindow1 = new WodeWinForm.MyControls.ComboBoxGridView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(449, 30);
+            this.button1.Location = new System.Drawing.Point(363, 14);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 23);
             this.button1.TabIndex = 1;
@@ -50,7 +53,7 @@ namespace WodeWinForm.View
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(83, 28);
+            this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(345, 25);
             this.textBox1.TabIndex = 2;
@@ -60,45 +63,18 @@ namespace WodeWinForm.View
             this.uiTextBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.uiTextBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiTextBox1.Location = new System.Drawing.Point(83, 90);
+            this.uiTextBox1.Location = new System.Drawing.Point(13, 74);
             this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 16);
             this.uiTextBox1.Name = "uiTextBox1";
             this.uiTextBox1.Padding = new System.Windows.Forms.Padding(5);
             this.uiTextBox1.ShowText = false;
-            this.uiTextBox1.Size = new System.Drawing.Size(408, 29);
+            this.uiTextBox1.Size = new System.Drawing.Size(344, 29);
             this.uiTextBox1.Symbol = 61447;
             this.uiTextBox1.TabIndex = 4;
             this.uiTextBox1.Text = "uiTextBox1";
             this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiTextBox1.Watermark = "";
-            // 
-            // dataWindow1
-            // 
-            this.dataWindow1.FormattingEnabled = true;
-            this.dataWindow1.Location = new System.Drawing.Point(83, 59);
-            this.dataWindow1.Name = "dataWindow1";
-            this.dataWindow1.NullValue = "";
-            this.dataWindow1.PopupGridAutoSize = false;
-            this.dataWindow1.RowFilterVisible = false;
-            this.dataWindow1.sDisplayField = "";
-            this.dataWindow1.sDisplayMember = "";
-            this.dataWindow1.SeparatorChar = "|";
-            this.dataWindow1.Size = new System.Drawing.Size(345, 23);
-            this.dataWindow1.sKeyWords = "";
-            this.dataWindow1.sValueMember = "";
-            this.dataWindow1.TabIndex = 0;
-            this.dataWindow1.Value = "";
-            // 
-            // closeableTabControl1
-            // 
-            this.closeableTabControl1.Controls.Add(this.tabPage1);
-            this.closeableTabControl1.Controls.Add(this.tabPage2);
-            this.closeableTabControl1.Location = new System.Drawing.Point(83, 142);
-            this.closeableTabControl1.Name = "closeableTabControl1";
-            this.closeableTabControl1.SelectedIndex = 0;
-            this.closeableTabControl1.Size = new System.Drawing.Size(630, 296);
-            this.closeableTabControl1.TabIndex = 5;
             // 
             // tabPage1
             // 
@@ -120,19 +96,82 @@ namespace WodeWinForm.View
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // uiComboDataGridView1
+            // 
+            this.uiComboDataGridView1.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList;
+            this.uiComboDataGridView1.FillColor = System.Drawing.Color.White;
+            this.uiComboDataGridView1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiComboDataGridView1.Location = new System.Drawing.Point(13, 113);
+            this.uiComboDataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiComboDataGridView1.MinimumSize = new System.Drawing.Size(63, 0);
+            this.uiComboDataGridView1.Name = "uiComboDataGridView1";
+            this.uiComboDataGridView1.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.uiComboDataGridView1.Size = new System.Drawing.Size(344, 29);
+            this.uiComboDataGridView1.SymbolSize = 24;
+            this.uiComboDataGridView1.TabIndex = 5;
+            this.uiComboDataGridView1.Text = "uiComboDataGridView1";
+            this.uiComboDataGridView1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiComboDataGridView1.Watermark = "";
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(13, 192);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(711, 300);
+            this.listView1.TabIndex = 6;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ColumnHeader1";
+            this.columnHeader1.Width = 228;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "ColumnHeader2";
+            this.columnHeader2.Width = 225;
+            // 
+            // dataWindow1
+            // 
+            this.dataWindow1.FormattingEnabled = true;
+            this.dataWindow1.Location = new System.Drawing.Point(12, 43);
+            this.dataWindow1.Name = "dataWindow1";
+            this.dataWindow1.NullValue = "";
+            this.dataWindow1.PopupGridAutoSize = true;
+            this.dataWindow1.RowFilterVisible = false;
+            this.dataWindow1.sDisplayField = "";
+            this.dataWindow1.sDisplayMember = "";
+            this.dataWindow1.SeparatorChar = "|";
+            this.dataWindow1.Size = new System.Drawing.Size(345, 23);
+            this.dataWindow1.sKeyWords = "";
+            this.dataWindow1.sValueMember = "";
+            this.dataWindow1.TabIndex = 0;
+            this.dataWindow1.Value = "";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "ColumnHeader3";
+            this.columnHeader3.Width = 166;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.closeableTabControl1);
+            this.ClientSize = new System.Drawing.Size(800, 539);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.uiComboDataGridView1);
             this.Controls.Add(this.uiTextBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataWindow1);
             this.Name = "Form4";
             this.Text = "Form4";
-            this.closeableTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,8 +183,13 @@ namespace WodeWinForm.View
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private Sunny.UI.UITextBox uiTextBox1;
-        private MyControls.CloseableTabControl closeableTabControl1;
+        
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private Sunny.UI.UIComboDataGridView uiComboDataGridView1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }

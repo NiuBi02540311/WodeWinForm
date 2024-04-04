@@ -20,7 +20,7 @@ namespace WodeWinForm
         //private bool isExpandAll = false;
         private readonly DataTable MenuDataTable = null;
 
-        private ImageList imageList;
+        //private ImageList imageList;
         //private ContextMenuStrip contextMenuStrip;
         public Index()
         {
@@ -176,8 +176,15 @@ namespace WodeWinForm
             
             #endregion
         }
+
         private void LoadPng()
         {
+            treeViewMenu.ImageList = GlobalConfig.imageList;
+            fullTabControl1.ImageList = GlobalConfig.imageList; 
+        }
+        private void LoadPng2()
+        {
+            ImageList imageList = null;
             string imagedirPath = @"E:\2024\WodeWinForm\WodeWinForm\Lib\1";
             if (Directory.Exists(imagedirPath))
             {
@@ -210,7 +217,7 @@ namespace WodeWinForm
                 }
                
             }
-            
+            GlobalConfig.imageList = imageList;
         }
         private void ToolStripMenuItem1_Click()
         {
