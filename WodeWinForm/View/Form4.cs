@@ -93,16 +93,64 @@ namespace WodeWinForm.View
             viewItem2.SubItems.Add("e");
             viewItem2.SubItems.Add("f");
 
-            listView1.Items.Add(viewItem);
-            listView1.Items.Add(viewItem2);
+            //listView1.Items.Add(viewItem);
+            //listView1.Items.Add(viewItem2);
             listView1.SmallImageList = GlobalConfig.imageList;
+
+            listView1.Items.Add(new ListViewItem(new string[] { "tetrse", "rerwerrr", "sddddd" }, 3));
+            listView1.Items.Add(new ListViewItem(new string[] { "11", "22", "33" }, 2));
+            listView1.Items.Add(new ListViewItem(new string[] { "aa", "bb", "cc" }, 4));
 
             listView1.FullRowSelect = true;
             //listView1.Items.Remove(viewItem2);
             //listView1.Items.RemoveAt(1);
             //listView1.Items.RemoveByKey("a1");
-
+            textBox2.TextChanged += new EventHandler(searchBox_TextChanged);
             listView1.MouseDoubleClick += listView1Doubleclick;
+            // Set the View to list to use the FindItemWithText method.
+            //listView1.View = System.Windows.Forms.View.List;  //View.List;
+
+            // Populate the ListViewWithItems
+            //listView1.Items.AddRange(new ListViewItem[]{
+            //new ListViewItem("Amy Alberts"),
+            //new ListViewItem("Amy Recker"),
+            //new ListViewItem("Erin Hagens"),
+            //new ListViewItem("Barry Johnson"),
+            //new ListViewItem("Jay Hamlin"),
+            //new ListViewItem("Brian Valentine"),
+            //new ListViewItem("Brian Welker"),
+            //new ListViewItem("Daniel Weisman") });
+        }
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            // Call FindItemWithText with the contents of the textbox.
+            //ListViewItem foundItem =  listView1.FindItemWithText(textBox2.Text, false, 0, true);
+            ListViewItem foundItem = listView1.FindItemWithText(textBox2.Text, true, 0, true);
+            //ListViewItem foundItem =  listView1.FindItemWithText(this.textBox2.Text, true, 0);
+            if (foundItem != null)
+            {
+                listView1.TopItem = foundItem;
+                //foundItem.ForeColor = Color.Red;
+            }
+             if(textBox2.Text.Trim() == "")
+            {
+                foundItem = null;
+            }
+            foreach(ListViewItem item in listView1.Items)
+            {
+                item.ForeColor = item == foundItem ? Color.Red : Color.Black;
+                item.BackColor = item == foundItem ? GlobalConfig.BackColor2 : Color.White;
+            }
+            //ListViewItem foundItem = this.listView1.FindItemWithText(this.textBox1.Text, true, 0);    //参数1：要查找的文本；参数2：是否子项也要查找；参数3：开始查找位置
+
+            //if (foundItem != null)
+            //{
+
+            //    this.listView1.TopItem = foundItem;  //定位到该项
+
+            //    foundItem.ForeColor = Color.Red;
+            //}
+
         }
         private void listView1Doubleclick(object sender, EventArgs e) {
 

@@ -38,8 +38,9 @@ namespace WodeWinForm.View
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.dataWindow1 = new WodeWinForm.MyControls.ComboBoxGridView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dataWindow1 = new WodeWinForm.MyControls.ComboBoxGridView();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -120,9 +121,9 @@ namespace WodeWinForm.View
             this.columnHeader2,
             this.columnHeader3});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(13, 192);
+            this.listView1.Location = new System.Drawing.Point(12, 283);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(711, 300);
+            this.listView1.Size = new System.Drawing.Size(711, 198);
             this.listView1.TabIndex = 6;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -136,6 +137,11 @@ namespace WodeWinForm.View
             // 
             this.columnHeader2.Text = "ColumnHeader2";
             this.columnHeader2.Width = 225;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "ColumnHeader3";
+            this.columnHeader3.Width = 166;
             // 
             // dataWindow1
             // 
@@ -154,16 +160,19 @@ namespace WodeWinForm.View
             this.dataWindow1.TabIndex = 0;
             this.dataWindow1.Value = "";
             // 
-            // columnHeader3
+            // textBox2
             // 
-            this.columnHeader3.Text = "ColumnHeader3";
-            this.columnHeader3.Width = 166;
+            this.textBox2.Location = new System.Drawing.Point(13, 242);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(344, 25);
+            this.textBox2.TabIndex = 7;
             // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 539);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.uiComboDataGridView1);
             this.Controls.Add(this.uiTextBox1);
@@ -191,5 +200,6 @@ namespace WodeWinForm.View
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
