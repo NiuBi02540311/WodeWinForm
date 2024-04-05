@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using System.Xml;
 using System.IO;
 using WodeWinForm.View;
+using System.Threading;
+
 namespace WodeWinForm
 {
     
@@ -180,7 +182,11 @@ namespace WodeWinForm
         private void LoadPng()
         {
             treeViewMenu.ImageList = GlobalConfig.imageList;
-            fullTabControl1.ImageList = GlobalConfig.imageList; 
+            fullTabControl1.ImageList = GlobalConfig.imageList;
+            labelLoading.Left = this.Width / 2;
+            labelLoading.Height = this.Height / 2;
+            labelLoading.TabIndex = 999;
+            //this.labelLoading.Location = new System.Drawing.Point(this.Width, this.Height);
         }
         private void LoadPng2()
         {
@@ -237,7 +243,10 @@ namespace WodeWinForm
         private void ParentForm_Resize(object sender, EventArgs e)
         {
             panel1.Height = panel1.Parent.Height;
-        }
+            labelLoading.Left = this.Width / 2;
+            labelLoading.Height = this.Height / 2;
+            //this.labelLoading.Location = new System.Drawing.Point(this.Width, this.Height);
+        }
         private bool startMove = false; //用于标记是否在移动中
         void panel1_MouseMove(object sender, MouseEventArgs e)
         {
@@ -307,7 +316,7 @@ namespace WodeWinForm
             }
         }
 
-        private void addTabPage(string strID)
+        private  void addTabPage(string strID)
         {
 
             //1.Activator.CreateInstance(Type)
@@ -328,6 +337,10 @@ namespace WodeWinForm
                 //MessageBox.Show(mzhj.Text + " - 已打开");
                 return;
             }
+          
+            labelLoading.Visible = true;
+            labelLoading.BackColor = Color.Yellow;
+
             //mzhj.BackColor = Color.Cyan;
             mzhj.AutoSize = false;
             mzhj.AutoScroll = true;
@@ -346,11 +359,18 @@ namespace WodeWinForm
             mzhj.FormBorderStyle = FormBorderStyle.None; //去除原form自带的边框
             mzhj.Dock = DockStyle.Fill; //填充整个tabpage
             mzhj.ControlBox = false;
+            mzhj.Load += Form_Load;
             mzhj.Show();
             //fullTabControl1.SelectedTab = fullTabControl1.TabPages[fullTabControl1.TabPages.Count - 1];
             fullTabControl1.SelectedTab = tb;
         }
-        private bool ShowChildForm(string sonText)
+
+        private async void Form_Load(object sender, EventArgs e)
+        {
+            await Task.Delay(1000);
+            labelLoading.Visible = false;
+        }
+        private bool ShowChildForm(string sonText)
         {
 
             foreach (TabPage mdic in fullTabControl1.TabPages)

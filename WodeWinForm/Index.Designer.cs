@@ -45,6 +45,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.labelLoading = new System.Windows.Forms.Label();
             this.fullTabControl1 = new WodeWinForm.MyControls.FullTabControl();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -231,6 +232,16 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(167, 20);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
+            // labelLoading
+            // 
+            this.labelLoading.AutoSize = true;
+            this.labelLoading.Location = new System.Drawing.Point(234, 9);
+            this.labelLoading.Name = "labelLoading";
+            this.labelLoading.Size = new System.Drawing.Size(63, 15);
+            this.labelLoading.TabIndex = 12;
+            this.labelLoading.Text = "Loading";
+            this.labelLoading.Visible = false;
+            // 
             // fullTabControl1
             // 
             this.fullTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -251,6 +262,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
             this.ClientSize = new System.Drawing.Size(821, 562);
+            this.Controls.Add(this.labelLoading);
             this.Controls.Add(this.statusStrip2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.fullTabControl1);
@@ -295,5 +307,6 @@
         private System.Windows.Forms.Button btnfind;
         private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Label labelLoading;
     }
 }

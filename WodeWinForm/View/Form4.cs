@@ -125,17 +125,17 @@ namespace WodeWinForm.View
         {
             // Call FindItemWithText with the contents of the textbox.
             //ListViewItem foundItem =  listView1.FindItemWithText(textBox2.Text, false, 0, true);
-            ListViewItem foundItem = listView1.FindItemWithText(textBox2.Text, true, 0, true);
+            ListViewItem foundItem = textBox2.Text == "" ? null: listView1.FindItemWithText(textBox2.Text, true, 0, true);
             //ListViewItem foundItem =  listView1.FindItemWithText(this.textBox2.Text, true, 0);
             if (foundItem != null)
             {
                 listView1.TopItem = foundItem;
                 //foundItem.ForeColor = Color.Red;
             }
-             if(textBox2.Text.Trim() == "")
-            {
-                foundItem = null;
-            }
+            // if(textBox2.Text.Trim() == "")
+            //{
+            //    foundItem = null;
+            //}
             foreach(ListViewItem item in listView1.Items)
             {
                 item.ForeColor = item == foundItem ? Color.Red : Color.Black;
@@ -206,5 +206,10 @@ namespace WodeWinForm.View
             //textBox2.Text = dataWindow1.GetDataProperty("department");
             //textBox3.Text = dataWindow1.GetDataProperty("postion");
         }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
