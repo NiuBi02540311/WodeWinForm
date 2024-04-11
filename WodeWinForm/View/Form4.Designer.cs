@@ -40,6 +40,7 @@ namespace WodeWinForm.View
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.comCheckBoxList1 = new ComboBoxCustomer.ComCheckBoxList();
             this.dataWindow1 = new WodeWinForm.MyControls.ComboBoxGridView();
             this.SuspendLayout();
             // 
@@ -121,7 +122,7 @@ namespace WodeWinForm.View
             this.columnHeader2,
             this.columnHeader3});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(13, 250);
+            this.listView1.Location = new System.Drawing.Point(12, 181);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(711, 198);
             this.listView1.TabIndex = 6;
@@ -145,10 +146,20 @@ namespace WodeWinForm.View
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(13, 206);
+            this.textBox2.Location = new System.Drawing.Point(12, 150);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(344, 25);
             this.textBox2.TabIndex = 7;
+            // 
+            // comCheckBoxList1
+            // 
+            this.comCheckBoxList1.DataSource = null;
+            this.comCheckBoxList1.Location = new System.Drawing.Point(18, 409);
+            this.comCheckBoxList1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.comCheckBoxList1.Name = "comCheckBoxList1";
+            this.comCheckBoxList1.Size = new System.Drawing.Size(339, 24);
+            this.comCheckBoxList1.TabIndex = 8;
+            this.comCheckBoxList1.ItemClick += new ComboBoxCustomer.ComCheckBoxList.CheckBoxListItemClick(this.comCheckBoxList1_ItemClick);
             // 
             // dataWindow1
             // 
@@ -171,7 +182,8 @@ namespace WodeWinForm.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 503);
+            this.ClientSize = new System.Drawing.Size(732, 680);
+            this.Controls.Add(this.comCheckBoxList1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.uiComboDataGridView1);
             this.Controls.Add(this.uiTextBox1);
@@ -202,5 +214,6 @@ namespace WodeWinForm.View
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.TextBox textBox2;
+        private ComboBoxCustomer.ComCheckBoxList comCheckBoxList1;
     }
 }

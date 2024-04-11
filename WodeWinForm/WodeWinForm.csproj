@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ComboBoxCustomer">
+      <HintPath>..\packages\ComboBoxCustomer.dll</HintPath>
+    </Reference>
     <Reference Include="CSkin">
       <HintPath>..\..\CSkin 16.1.14.3\CSkin 4.0\CSkin.dll</HintPath>
     </Reference>

@@ -57,6 +57,10 @@ namespace WodeWinForm.View
             this.uiComboDataGridView1.ValueChanged += new Sunny.UI.UIComboDataGridView.OnValueChanged(this.uiComboDataGridView1_ValueChanged);
 
             loadlistView();
+
+            comCheckBoxList1.AddItems("1....");
+            comCheckBoxList1.AddItems("2....");
+            comCheckBoxList1.AddItems("3....");
         }
         private void UiComboDataGridView1_SelectIndexChange(object sender, int index)
         {
@@ -210,6 +214,20 @@ namespace WodeWinForm.View
         private void Form4_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void comCheckBoxList1_ItemClick(object sender, ItemCheckEventArgs e)
+        {
+            //httpss://www.cnblogs.com/yangsirc/p/8080510.html
+            string text = comCheckBoxList1.GetItemText(comCheckBoxList1.Items[e.Index]);
+
+            
+            //if (jobs_result.Contains(text))
+            //    jobs_result.Remove(text);
+            //else
+            //    jobs_result.Add(text);
+
+            MessageBox.Show(text);
         }
     }
 }
