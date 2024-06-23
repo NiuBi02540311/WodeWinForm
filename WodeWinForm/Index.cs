@@ -243,8 +243,16 @@ namespace WodeWinForm
         private void ParentForm_Resize(object sender, EventArgs e)
         {
             panel1.Height = panel1.Parent.Height;
-            labelLoading.Left = this.Width / 2;
-            labelLoading.Height = this.Height / 2;
+            //labelLoading.Left = this.Width / 2;
+            //labelLoading.Height = this.Height / 2;
+
+            Point P = new Point();
+            P.X = fullTabControl1.Width / 2;
+            P.Y = fullTabControl1.Height / 2;
+            labelLoading.Location = P;
+            //labelLoadingl = fullTabControl1.Width / 2;
+            //labelLoading.Height = fullTabControl1.Height / 2;
+
             //this.labelLoading.Location = new System.Drawing.Point(this.Width, this.Height);
         }
         private bool startMove = false; //用于标记是否在移动中
@@ -340,6 +348,18 @@ namespace WodeWinForm
           
             labelLoading.Visible = true;
             labelLoading.BackColor = Color.Yellow;
+            //var lens = fullTabControl1.TabPages.Count;
+            //if(lens > 0)
+            {
+                //labelLoading.Left = fullTabControl1.Width / 2 ;
+                //labelLoading.Height = fullTabControl1.Height / 2;
+
+                Point P = new Point();
+                P.X = this.Width / 2;
+                P.Y = this.Height / 2;
+                labelLoading.Location = P;
+            }
+           
 
             //mzhj.BackColor = Color.Cyan;
             mzhj.AutoSize = false;
@@ -363,6 +383,8 @@ namespace WodeWinForm
             mzhj.Show();
             //fullTabControl1.SelectedTab = fullTabControl1.TabPages[fullTabControl1.TabPages.Count - 1];
             fullTabControl1.SelectedTab = tb;
+
+           
         }
 
         private async void Form_Load(object sender, EventArgs e)
@@ -710,6 +732,11 @@ namespace WodeWinForm
         }
 
         private void fullTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelLoading_Click(object sender, EventArgs e)
         {
 
         }

@@ -282,7 +282,9 @@ namespace WodeWinForm
             // 
             // uiPanel1
             // 
+            this.uiPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.uiPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.uiPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.uiPanel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiPanel1.Location = new System.Drawing.Point(0, 0);
             this.uiPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -296,6 +298,7 @@ namespace WodeWinForm
             // uiPanelLoginMsg
             // 
             this.uiPanelLoginMsg.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.uiPanelLoginMsg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.uiPanelLoginMsg.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiPanelLoginMsg.Location = new System.Drawing.Point(0, 394);
             this.uiPanelLoginMsg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
