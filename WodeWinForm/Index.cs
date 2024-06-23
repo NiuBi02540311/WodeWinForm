@@ -183,9 +183,15 @@ namespace WodeWinForm
         {
             treeViewMenu.ImageList = GlobalConfig.imageList;
             fullTabControl1.ImageList = GlobalConfig.imageList;
-            labelLoading.Left = this.Width / 2;
-            labelLoading.Height = this.Height / 2;
-            labelLoading.TabIndex = 999;
+            //labelLoading.Left = this.Width / 2;
+            //labelLoading.Height = this.Height / 2;
+            //labelLoading.TabIndex = 999;
+
+            Point P = new Point();
+            P.X = this.Width / 2;
+            P.Y = this.Height / 2;
+            labelLoading.Location = P;
+
             //this.labelLoading.Location = new System.Drawing.Point(this.Width, this.Height);
         }
         private void LoadPng2()
@@ -247,8 +253,8 @@ namespace WodeWinForm
             //labelLoading.Height = this.Height / 2;
 
             Point P = new Point();
-            P.X = fullTabControl1.Width / 2;
-            P.Y = fullTabControl1.Height / 2;
+            P.X = this.Width / 2;
+            P.Y = this.Height / 2;
             labelLoading.Location = P;
             //labelLoadingl = fullTabControl1.Width / 2;
             //labelLoading.Height = fullTabControl1.Height / 2;
@@ -354,10 +360,10 @@ namespace WodeWinForm
                 //labelLoading.Left = fullTabControl1.Width / 2 ;
                 //labelLoading.Height = fullTabControl1.Height / 2;
 
-                Point P = new Point();
-                P.X = this.Width / 2;
-                P.Y = this.Height / 2;
-                labelLoading.Location = P;
+                //Point P = new Point();
+                //P.X = this.Width / 2;
+                //P.Y = this.Height / 2;
+                //labelLoading.Location = P;
             }
            
 
@@ -391,6 +397,23 @@ namespace WodeWinForm
         {
             await Task.Delay(1000);
             labelLoading.Visible = false;
+
+            CheckButtionPermission(sender as Form);
+            //MessageBox.Show(f.Text);
+        }
+        private void CheckButtionPermission(Form f)
+        {
+            if (f == null) return;
+            int i = 0;
+            foreach (Control c in f.Controls)
+            {
+                if (c is Button)
+                {
+                    // 从数据库获取相关权限配置，判断当前用户是否有相关按钮的权限
+                    c.Enabled = i % 2 != 0;
+                    i++;
+                }
+            }
         }
         private bool ShowChildForm(string sonText)
         {
