@@ -12,6 +12,7 @@ namespace WodeWinForm.MyControls
 {
     public partial class MyGridCombobox : UserControl
     {
+        //httpss://wwww.cnblogs.com/springSky/archive/2013/02/19/2913993.html
 
         private DataTable _dataList = new DataTable();
         private TextBox _txtBox;
