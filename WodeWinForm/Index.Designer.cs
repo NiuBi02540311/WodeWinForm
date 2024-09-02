@@ -73,7 +73,7 @@
             this.windowsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.退出ToolStripMenuItem});
             this.windowsToolStripMenuItem.Name = "windowsToolStripMenuItem";
-            this.windowsToolStripMenuItem.Size = new System.Drawing.Size(87, 26);
+            this.windowsToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
             this.windowsToolStripMenuItem.Text = "windows";
             // 
             // 退出ToolStripMenuItem
@@ -88,7 +88,7 @@
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showHideMenuToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(58, 26);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // showHideMenuToolStripMenuItem
@@ -101,7 +101,7 @@
             // toolToolStripMenuItem
             // 
             this.toolToolStripMenuItem.Name = "toolToolStripMenuItem";
-            this.toolToolStripMenuItem.Size = new System.Drawing.Size(56, 26);
+            this.toolToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
             this.toolToolStripMenuItem.Text = "Tool";
             // 
             // treeViewMenu

@@ -92,6 +92,7 @@ namespace WodeWinForm
             ErrorData.Rows.Add("5", "2", "自动更新实例2", "WodeWinForm", "WodeWinForm.View.Form3");
             ErrorData.Rows.Add("6", "2", "combox下拉表格", "WodeWinForm", "WodeWinForm.View.Form4");
             ErrorData.Rows.Add("7", "2", "零一二三四五六七八九十", "WodeWinForm", "WodeWinForm.View.Form4");
+            ErrorData.Rows.Add("8", "2", "ComboxGird案例", "WodeWinForm", "WodeWinForm.View.Form5");
             for (int i= 5; i < 16; i++)
             {
                // ErrorData.Rows.Add(i, i % 2 == 0 ? 1:2, "教师信息录入"+i, "WodeWinForm", "WodeWinForm.View.Form2");
